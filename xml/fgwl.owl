@@ -168,6 +168,204 @@
     
 
 
+    <!-- http://creativecommons.org -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CreativeCommons"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fsf.org -->
+
+    <owl:NamedIndividual rdf:about="http://fsf.org">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#FreeSoftwareFoundation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/1.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/1.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-SA-1.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/2.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/2.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-SA-2.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/2.0/uk/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/2.0/uk/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-SA-2.0-UK"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/2.1/jp/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/2.1/jp/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-SA-2.1-JP"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/2.5/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/2.5/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-SA-2.5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-SA-3.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/3.0/at/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/3.0/at/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-SA-3.0-AT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-sa/4.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-SA-4.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/1.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/1.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-1.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/2.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/2.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-2.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/2.5/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/2.5/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-2.5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/2.5/au/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/2.5/au/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-2.5-AU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/3.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/3.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-3.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/3.0/at/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/3.0/at/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-3.0-AT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/3.0/us/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/3.0/us/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-3.0-US"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by/4.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/4.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-BY-4.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/licenses/publicdomain/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC-PDDC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://creativecommons.org/publicdomain/zero/1.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CC0-1.0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gnu.org/licenses/fdl-1.3.html -->
+
+    <owl:NamedIndividual rdf:about="http://gnu.org/licenses/fdl-1.3.html"/>
+    
+
+
+    <!-- http://gnu.org/licenses/gpl-2.0.html -->
+
+    <owl:NamedIndividual rdf:about="http://gnu.org/licenses/gpl-2.0.html">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#GPL-2.0-only"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gnu.org/licenses/gpl-3.0.html -->
+
+    <owl:NamedIndividual rdf:about="http://gnu.org/licenses/gpl-3.0.html">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#GPL-3.0-only"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gnu.org/licenses/lgpl-2.1.html -->
+
+    <owl:NamedIndividual rdf:about="http://gnu.org/licenses/lgpl-2.1.html">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#LGPL-2.1-only"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gnu.org/licenses/lgpl-3.0.html -->
+
+    <owl:NamedIndividual rdf:about="http://gnu.org/licenses/lgpl-3.0.html">
+        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#LGPL-3.0-only"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.fgw.net/core#permissive -->
 
     <owl:NamedIndividual rdf:about="http://www.fgw.net/core#permissive"/>
