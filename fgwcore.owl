@@ -134,6 +134,19 @@ spdx:member rdf:type owl:ObjectProperty .
           rdfs:label "collects"@en .
 
 
+###  http://www.fgw.net/core#collectsWork
+:collectsWork rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :collects ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Collection
+                                          :Platform
+                                        )
+                          ] ;
+              rdfs:range :Work ;
+              rdfs:comment "Specifies a work part of the collection or platform"@en ;
+              rdfs:label "collects work"@en .
+
+
 ###  http://www.fgw.net/core#derivedFrom
 :derivedFrom rdf:type owl:ObjectProperty ;
              rdfs:domain :Work ;
@@ -280,6 +293,18 @@ spdx:member rdf:type owl:ObjectProperty .
       rdfs:range :Platform ;
       rdfs:comment "Specifies the platform used by the user."@en ;
       rdfs:label "uses"@en .
+
+
+###  http://www.fgw.net/core#workLicenseLevel
+:workLicenseLevel rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Work ;
+                  rdfs:range :LicenseLevel ;
+                  owl:propertyChainAxiom ( :license
+                                           :licenseLevel
+                                         ) ;
+                  rdfs:comment "Specifies how restrictive the licensing of a work is"@en ;
+                  rdfs:label "work license level"@en .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty
@@ -458,6 +483,7 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
                               owl:onProperty :foundIn ;
                               owl:someValuesFrom :Platform
                             ] ;
+            owl:disjointWith :Work ;
             rdfs:comment "Represents a collection of works or other collections of a given platform by a user of that platform."@en ;
             rdfs:label "Collection"@en .
 
@@ -599,8 +625,9 @@ This means the user has to comply with the terms of all licenses in the set."""@
 :LargeCollection rdf:type owl:Class ;
                  owl:equivalentClass [ owl:intersectionOf ( :Collection
                                                             [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :collects ;
-                                                              owl:minCardinality "10"^^xsd:nonNegativeInteger
+                                                              owl:onProperty :collectsWork ;
+                                                              owl:minQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass :Work
                                                             ]
                                                           ) ;
                                        rdf:type owl:Class
