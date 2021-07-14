@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.fgw.net/formats#"
+     xml:base="http://www.fgw.net/formats"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:fgwcore="http://www.fgw.net/core#"
+     xmlns:dcmitype="http://purl.org/dc/dcmitype/">
+    <owl:Ontology rdf:about="http://www.fgw.net/formats">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Valentino Giudice</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-07-14T00:00:00-00:00</dc:date>
+        <dc:description xml:lang="en">File formats and types of work in the FGW Ontology.</dc:description>
+        <dc:title xml:lang="en">OGW Formats</dc:title>
+        <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#token">fgwf</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fgw.net/formats#</vann:preferredNamespaceUri>
+        <rdfs:label xml:lang="en">FGW Formats</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.fgw.net/core#extension -->
+
+    <owl:DatatypeProperty rdf:about="http://www.fgw.net/core#extension"/>
+    
+
+
+    <!-- http://www.fgw.net/core#mime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.fgw.net/core#mime"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/dcmitype/Image -->
+
+    <owl:Class rdf:about="http://purl.org/dc/dcmitype/Image">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/dcmitype/Sound -->
+
+    <owl:Class rdf:about="http://purl.org/dc/dcmitype/Sound"/>
+    
+
+
+    <!-- http://www.fgw.net/core#FileFormat -->
+
+    <owl:Class rdf:about="http://www.fgw.net/core#FileFormat"/>
+    
+
+
+    <!-- http://www.fgw.net/core#WorkType -->
+
+    <owl:Class rdf:about="http://www.fgw.net/core#WorkType"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Image -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Image"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.fgw.net/formats#Audio-AAC -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Audio-AAC">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">AAC</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">audio/aac</fgwcore:mime>
+        <rdfs:comment xml:lang="en">Audio in AAC format</rdfs:comment>
+        <rdfs:label xml:lang="en">audio AAC</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Audio-MPEG -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Audio-MPEG">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">MP3</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">audio/mpeg</fgwcore:mime>
+        <rdfs:comment xml:lang="en">Audio in MP3 format</rdfs:comment>
+        <rdfs:label xml:lang="en">audio MPEG</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Audio-OGG -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Audio-OGG">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">OGG</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">audio/ogg</fgwcore:mime>
+        <rdfs:comment xml:lang="en">Audio in OGG format</rdfs:comment>
+        <rdfs:label xml:lang="en">audio OGG</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Audio-OPUS -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Audio-OPUS">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">OPUS</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">audio/opus</fgwcore:mime>
+        <rdfs:comment xml:lang="en">Audio in OPUS format</rdfs:comment>
+        <rdfs:label xml:lang="en">audio OPUS</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#ConceptArt -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#ConceptArt">
+        <rdf:type rdf:resource="http://www.fgw.net/core#WorkType"/>
+        <rdfs:comment xml:lang="en">Concept art</rdfs:comment>
+        <rdfs:label xml:lang="en">concept art</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Document -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Document">
+        <rdf:type rdf:resource="http://www.fgw.net/core#WorkType"/>
+        <rdfs:comment xml:lang="en">Document which doesn&apos;t fall in other categories, such as text</rdfs:comment>
+        <rdfs:label xml:lang="en">document</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#EXR -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#EXR">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">EXR</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/aces</fgwcore:mime>
+        <rdfs:comment xml:lang="en">EXR format for 3D models</rdfs:comment>
+        <rdfs:label xml:lang="en">EXR</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Image-BMP -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Image-BMP">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">BMP</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/bmp</fgwcore:mime>
+        <rdfs:comment xml:lang="en">BMP format</rdfs:comment>
+        <rdfs:label xml:lang="en">image BMP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Image-GIF -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Image-GIF">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">GIF</fgwcore:extension>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/gif</fgwcore:extension>
+        <rdfs:comment xml:lang="en">GIF format</rdfs:comment>
+        <rdfs:label xml:lang="en">Image GIF</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Image-JPEG -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Image-JPEG">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">JPEG</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/jpeg</fgwcore:mime>
+        <rdfs:comment xml:lang="en">JPEG format</rdfs:comment>
+        <rdfs:label xml:lang="en">Image JPEG</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Image-PNG -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Image-PNG">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">PNG</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/png</fgwcore:mime>
+        <rdfs:comment xml:lang="en">PNG format</rdfs:comment>
+        <rdfs:label xml:lang="en">Image PNG</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Image-SVG -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Image-SVG">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">SVG</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/svg+xml</fgwcore:mime>
+        <rdfs:comment xml:lang="en">SVG format</rdfs:comment>
+        <rdfs:label xml:lang="en">Image SVG</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Image-TIFF -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Image-TIFF">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">TF</fgwcore:extension>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">TIFF</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">image/tiff</fgwcore:mime>
+        <rdfs:comment xml:lang="en">Tiff format</rdfs:comment>
+        <rdfs:label xml:lang="en">Image TIFF</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Music -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Music">
+        <rdf:type rdf:resource="http://www.fgw.net/core#WorkType"/>
+        <rdfs:comment xml:lang="en">Music</rdfs:comment>
+        <rdfs:label xml:lang="en">music</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.org/dc/dcmitype/Sound"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#OBJ -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#OBJ">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">OBJ</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">text/plain</fgwcore:mime>
+        <rdfs:comment xml:lang="en">OBJ format for 3D models</rdfs:comment>
+        <rdfs:label xml:lang="en">OBJ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#SBSAR -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#SBSAR">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">SBSAR</fgwcore:extension>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">application/octet-stream</fgwcore:extension>
+        <rdfs:comment xml:lang="en">SBSAR format for textures</rdfs:comment>
+        <rdfs:label xml:lang="en">SBAR</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#SoundEffect -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#SoundEffect">
+        <rdf:type rdf:resource="http://www.fgw.net/core#WorkType"/>
+        <rdfs:comment xml:lang="en">Sound effect</rdfs:comment>
+        <rdfs:label xml:lang="en">sound effect</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.org/dc/dcmitype/Sound"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Texture -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Texture">
+        <rdf:type rdf:resource="http://www.fgw.net/core#WorkType"/>
+        <rdfs:comment xml:lang="en">Texture for 3D models</rdfs:comment>
+        <rdfs:label xml:lang="en">texture</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Video-AVI -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Video-AVI">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">AVI</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">video/x-msvideo</fgwcore:mime>
+        <rdfs:comment xml:lang="en">AVI fomat</rdfs:comment>
+        <rdfs:label xml:lang="en">video AVI</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Video-MP2T -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Video-MP2T">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">TS</fgwcore:mime>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">video/mp2t</fgwcore:mime>
+        <rdfs:comment xml:lang="en">MP2T format</rdfs:comment>
+        <rdfs:label xml:lang="en">video MP2T</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Video-MP4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Video-MP4">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">MP4</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">video/mp4</fgwcore:mime>
+        <rdfs:comment xml:lang="en">MP4 format</rdfs:comment>
+        <rdfs:label xml:lang="en">video MP4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Video-MPEG -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Video-MPEG">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">MPEG</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">video/mpeg</fgwcore:mime>
+        <rdfs:comment xml:lang="en">MPEG format</rdfs:comment>
+        <rdfs:label xml:lang="en">video MPEG</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#Video-OGG -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#Video-OGG">
+        <rdf:type rdf:resource="http://www.fgw.net/core#FileFormat"/>
+        <fgwcore:extension rdf:datatype="http://www.w3.org/2001/XMLSchema#token">OGV</fgwcore:extension>
+        <fgwcore:mime rdf:datatype="http://www.w3.org/2001/XMLSchema#token">video/ogg</fgwcore:mime>
+        <rdfs:comment xml:lang="en">OGG video</rdfs:comment>
+        <rdfs:label xml:lang="en">video OGG</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#2DArt -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#2DArt">
+        <rdf:type rdf:resource="http://www.fgw.net/core#WorkType"/>
+        <rdfs:comment xml:lang="en">2D artworks such as images (including animated)</rdfs:comment>
+        <rdfs:label xml:lang="en">2D art</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.org/dc/dcmitype/Image"/>
+        <rdfs:seeAlso rdf:resource="http://xmlns.com/foaf/0.1/Image"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.fgw.net/formats#3DModel -->
+
+    <owl:NamedIndividual rdf:about="http://www.fgw.net/formats#3DModel">
+        <rdf:type rdf:resource="http://www.fgw.net/core#WorkType"/>
+        <rdfs:comment xml:lang="en">3D models</rdfs:comment>
+        <rdfs:label xml:lang="en">3D model</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
