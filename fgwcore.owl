@@ -116,19 +116,22 @@ spdx:member rdf:type owl:ObjectProperty .
         rdfs:label "author"@en .
 
 
-###  http://www.fgw.net/core#contains
-:contains rdf:type owl:ObjectProperty ;
+###  http://www.fgw.net/core#collects
+:collects rdf:type owl:ObjectProperty ;
+          owl:inverseOf :foundIn ;
+          rdf:type owl:TransitiveProperty ;
           rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :ConjunctiveLicenseSet
-                                      :DisjunctiveLicenseSet
+                        owl:unionOf ( :Collection
+                                      :Platform
                                     )
                       ] ;
-          rdfs:range :License ;
-          rdfs:comment "Specifies a license in the set."@en ;
-          rdfs:label "contains"@en ;
-          rdfs:seeAlso spdx:member ,
-                       rdfs:ContainerMembershipProperty ,
-                       rdfs:member .
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Collection
+                                     :Work
+                                   )
+                     ] ;
+          rdfs:comment "Specifies works or other collections in the collection."@en ;
+          rdfs:label "collects"@en .
 
 
 ###  http://www.fgw.net/core#derivedFrom
@@ -244,6 +247,21 @@ spdx:member rdf:type owl:ObjectProperty .
               rdfs:range :LicenseLevel ;
               rdfs:comment "Specifies how restrictive a license is."@en ;
               rdfs:label "license level"@en .
+
+
+###  http://www.fgw.net/core#memberLicense
+:memberLicense rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :ConjunctiveLicenseSet
+                                           :DisjunctiveLicenseSet
+                                         )
+                           ] ;
+               rdfs:range :License ;
+               rdfs:comment "Specifies a license in the set."@en ;
+               rdfs:label "contains"@en ;
+               rdfs:seeAlso spdx:member ,
+                            rdfs:ContainerMembershipProperty ,
+                            rdfs:member .
 
 
 ###  http://www.fgw.net/core#type
@@ -451,7 +469,7 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
                                        [ rdf:type owl:Class ;
                                          owl:unionOf ( :CopyleftLicense
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :contains ;
+                                                         owl:onProperty :memberLicense ;
                                                          owl:allValuesFrom :PermissiveLicense
                                                        ]
                                                      )
@@ -460,7 +478,7 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
                                          owl:unionOf ( :StrongCopyleftLicense
                                                        [ rdf:type owl:Class ;
                                                          owl:complementOf [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :contains ;
+                                                                            owl:onProperty :memberLicense ;
                                                                             owl:someValuesFrom :StrongCopyleftLicense
                                                                           ]
                                                        ]
@@ -470,7 +488,7 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
                                          owl:complementOf [ owl:intersectionOf ( :StrongCopyleftLicense
                                                                                  [ rdf:type owl:Class ;
                                                                                    owl:complementOf [ rdf:type owl:Restriction ;
-                                                                                                      owl:onProperty :contains ;
+                                                                                                      owl:onProperty :memberLicense ;
                                                                                                       owl:someValuesFrom :StrongCopyleftLicense
                                                                                                     ]
                                                                                  ]
@@ -483,7 +501,7 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
                                                                                    owl:complementOf :PermissiveLicense
                                                                                  ]
                                                                                  [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty :contains ;
+                                                                                   owl:onProperty :memberLicense ;
                                                                                    owl:allValuesFrom :PermissiveLicense
                                                                                  ]
                                                                                ) ;
@@ -491,11 +509,11 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
                                                           ]
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty :contains ;
+                                         owl:onProperty :memberLicense ;
                                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                                          owl:onClass :License
                                        ] ;
-                       owl:hasKey ( :contains
+                       owl:hasKey ( :memberLicense
                                   ) ;
                        rdfs:comment """Represents a conjunction of multiple licenses.
 This means the user has to comply with the terms of all licenses in the set."""@en ;
@@ -519,7 +537,7 @@ This means the user has to comply with the terms of all licenses in the set."""@
                                        [ rdf:type owl:Class ;
                                          owl:unionOf ( :PermissiveLicense
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :contains ;
+                                                         owl:onProperty :memberLicense ;
                                                          owl:allValuesFrom :CopyleftLicense
                                                        ]
                                                      )
@@ -529,7 +547,7 @@ This means the user has to comply with the terms of all licenses in the set."""@
                                                          owl:complementOf :StrongCopyleftLicense
                                                        ]
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :contains ;
+                                                         owl:onProperty :memberLicense ;
                                                          owl:allValuesFrom :StrongCopyleftLicense
                                                        ]
                                                      )
@@ -537,7 +555,7 @@ This means the user has to comply with the terms of all licenses in the set."""@
                                        [ rdf:type owl:Class ;
                                          owl:complementOf [ owl:intersectionOf ( :PermissiveLicense
                                                                                  [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty :contains ;
+                                                                                   owl:onProperty :memberLicense ;
                                                                                    owl:allValuesFrom :CopyleftLicense
                                                                                  ]
                                                                                ) ;
@@ -549,7 +567,7 @@ This means the user has to comply with the terms of all licenses in the set."""@
                                                                                    owl:complementOf :StrongCopyleftLicense
                                                                                  ]
                                                                                  [ rdf:type owl:Restriction ;
-                                                                                   owl:onProperty :contains ;
+                                                                                   owl:onProperty :memberLicense ;
                                                                                    owl:allValuesFrom :StrongCopyleftLicense
                                                                                  ]
                                                                                ) ;
@@ -557,11 +575,11 @@ This means the user has to comply with the terms of all licenses in the set."""@
                                                           ]
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty :contains ;
+                                         owl:onProperty :memberLicense ;
                                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                                          owl:onClass :License
                                        ] ;
-                       owl:hasKey ( :contains
+                       owl:hasKey ( :memberLicense
                                   ) ;
                        rdfs:comment "Represents a set of licenses among which the user may chose. The user only has to comply with the terms of at least one license at their choice in the set and receives all permissions from all licenses they comply with."@en ;
                        rdfs:label "Disjunctive license set"@en .
@@ -575,6 +593,21 @@ This means the user has to comply with the terms of all licenses in the set."""@
                             ] ;
             rdfs:comment "Represents a type of file and its encoding."@en ;
             rdfs:label "File format"@en .
+
+
+###  http://www.fgw.net/core#LargeCollection
+:LargeCollection rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Collection
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :collects ;
+                                                              owl:minCardinality "10"^^xsd:nonNegativeInteger
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Collection ;
+                 rdfs:comment "Represents a large collection with at least 10 elements."@en ;
+                 rdfs:label "large collection"@en .
 
 
 ###  http://www.fgw.net/core#License
