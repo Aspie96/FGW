@@ -170,19 +170,6 @@
 
     <!-- http://creativecommons.org -->
 
-    <owl:NamedIndividual rdf:about="http://creativecommons.org">
-        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#CreativeCommons"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://fsf.org -->
-
-    <owl:NamedIndividual rdf:about="http://fsf.org">
-        <owl:sameAs rdf:resource="http://www.fgw.net/licenses#FreeSoftwareFoundation"/>
-    </owl:NamedIndividual>
-    
-
 
     <!-- http://creativecommons.org/licenses/by-sa/1.0/ -->
 
