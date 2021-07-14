@@ -11,7 +11,7 @@
 : a ns1:Ontology ;
     rdfs:label "ambientCG"@en ;
     rdfs:comment "Public Domain materials for Physically Based Rendering."@en ;
-    ns1:imports <http://aspie96.github.io/FGW/fgwcore.owl> .
+    ns1:imports <http://aspie96.github.io/FGW/fgw.owl> .
 
 ambientcgc:3DApple a fgwcore:Collection,
         ns1:NamedIndividual ;
