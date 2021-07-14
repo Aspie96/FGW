@@ -827,8 +827,8 @@ However, license exceptions may allow some additional uses or remove some restri
                                              rdf:type owl:Class
                                            ] ;
                        rdfs:subClassOf :CopyleftLicense ;
-                       rdfs:label "A copyleft license which requires that when works are combined with the licensed work they are released under a compatible license."@en ,
-                                  "Strong copyleft license"@en .
+                       rdfs:comment "A copyleft license which requires that when works are combined with the licensed work they are released under a compatible license."@en ;
+                       rdfs:label "Strong copyleft license"@en .
 
 
 ###  http://www.fgw.net/core#WeakCopyleftLicense

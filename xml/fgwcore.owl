@@ -1187,7 +1187,7 @@ However, license exceptions may allow some additional uses or remove some restri
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#CopyleftLicense"/>
-        <rdfs:label xml:lang="en">A copyleft license which requires that when works are combined with the licensed work they are released under a compatible license.</rdfs:label>
+        <rdfs:comment xml:lang="en">A copyleft license which requires that when works are combined with the licensed work they are released under a compatible license.</rdfs:comment>
         <rdfs:label xml:lang="en">Strong copyleft license</rdfs:label>
     </owl:Class>
     
