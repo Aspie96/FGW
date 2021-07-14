@@ -17,9 +17,9 @@
      xmlns:fgwcore="http://www.fgw.net/core#"
      xmlns:dcmitype="http://purl.org/dc/dcmitype/">
     <owl:Ontology rdf:about="http://www.fgw.net/">
-        <owl:imports rdf:resource="https://aspie96.github.io/FGW/xml/fgwcore.xml"/>
-        <owl:imports rdf:resource="https://aspie96.github.io/FGW/xml/fgwf.xml"/>
-        <owl:imports rdf:resource="https://aspie96.github.io/FGW/xml/fgwl.xml"/>
+        <owl:imports rdf:resource="http://aspie96.github.io/FGW/fgwcore.owl"/>
+        <owl:imports rdf:resource="http://aspie96.github.io/FGW/fgwf.owl"/>
+        <owl:imports rdf:resource="http://aspie96.github.io/FGW/fgwl.owl"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Valentino Giudice</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-07-14T00:00:00-00:00</dc:date>
         <dc:description xml:lang="en">Free Game Works ontology.
@@ -31,13 +31,13 @@ This ontology imports:
         <dc:title xml:lang="en">Free Game Works ontology</dc:title>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#token">fgw</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fgw.net/</vann:preferredNamespaceUri>
-        <rdf:label xml:lang="en">Free Game Works ontology</rdf:label>
         <rdfs:comment xml:lang="en">Free Game Works ontology.
 
 This ontology imports:
 - fgwcore: Core of the FGW ontology.
 - fgwl: Individuals of the FGW ontology relative to licensing.
 - fgwf: Individuals of the FGW ontology relative to formats and work types.</rdfs:comment>
+        <rdfs:label xml:lang="en">Free Game Works ontology</rdfs:label>
     </owl:Ontology>
     
 
@@ -86,12 +86,6 @@ This ontology imports:
     <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#label -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#label"/>
 </rdf:RDF>
 
 

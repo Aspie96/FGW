@@ -31,13 +31,13 @@ This ontology imports:
                        dc:title "Free Game Works ontology"@en ;
                        vann:preferredNamespacePrefix "fgw"^^xsd:token ;
                        vann:preferredNamespaceUri "http://www.fgw.net/"^^xsd:anyURI ;
-                       rdf:label "Free Game Works ontology"@en ;
                        rdfs:comment """Free Game Works ontology.
 
 This ontology imports:
 - fgwcore: Core of the FGW ontology.
 - fgwl: Individuals of the FGW ontology relative to licensing.
-- fgwf: Individuals of the FGW ontology relative to formats and work types."""@en .
+- fgwf: Individuals of the FGW ontology relative to formats and work types."""@en ;
+                       rdfs:label "Free Game Works ontology"@en .
 
 #################################################################
 #    Annotation properties
