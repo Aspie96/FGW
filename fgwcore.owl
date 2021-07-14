@@ -169,7 +169,7 @@ spdx:member rdf:type owl:ObjectProperty .
 ###  http://www.fgw.net/core#exceptionAppliedTo
 :exceptionAppliedTo rdf:type owl:ObjectProperty ;
                     rdfs:domain :LicenseWithExceptions ;
-                    rdfs:range :LicenseException ;
+                    rdfs:range :LicenseDocument ;
                     rdfs:comment "exception applied to"@en ;
                     rdfs:label "Specifies to which license the exceptions are applied."@en .
 
@@ -370,13 +370,6 @@ dcterms:source rdf:type owl:DatatypeProperty .
 
 ###  http://www.fgw.net/core#location
 :location rdf:type owl:DatatypeProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Collection
-                                      :Platform
-                                      :PlatformUser
-                                      :Work
-                                    )
-                      ] ;
           rdfs:range xsd:anyURI ;
           rdfs:comment "Specifies a URL."@en ;
           rdfs:label "location"@en .
@@ -772,8 +765,7 @@ When a license document is in the list it means that the agent certifies that th
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty :exceptionAppliedTo ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass :LicenseDocument
+                                         owl:someValuesFrom :LicenseDocument
                                        ] ;
                        owl:hasKey ( :exception
                                   ) ,
