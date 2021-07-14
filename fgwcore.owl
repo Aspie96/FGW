@@ -9,10 +9,12 @@
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://www.fgw.net/core#> .
+@base <http://www.fgw.net/core> .
 
-<http://www.fgw.net/core#> rdf:type owl:Ontology ;
-                            rdfs:label "Core of the FGW Ontology."@en .
+<http://www.fgw.net/core> rdf:type owl:Ontology ;
+                           rdfs:comment """Core of the FGW ontology.
+This is the T-box for the ontology and contains all classes, as well as individuals needed to specify enumerated classes."""@en ;
+                           rdfs:label "Core of the FGW Ontology."@en .
 
 #################################################################
 #    Object Properties
@@ -47,26 +49,34 @@ spdx:member rdf:type owl:ObjectProperty .
 :approved rdf:type owl:ObjectProperty ;
           owl:inverseOf :approves ;
           rdfs:domain :LicenseDocument ;
-          rdfs:range :LicenseValidator .
+          rdfs:range :LicenseValidator ;
+          rdfs:comment "Specifies a license validator by which the license document was approved."@en ;
+          rdfs:label "approved"@en .
 
 
 ###  http://www.fgw.net/core#approves
 :approves rdf:type owl:ObjectProperty ;
           rdfs:domain :LicenseValidator ;
-          rdfs:range :LicenseDocument .
+          rdfs:range :LicenseDocument ;
+          rdfs:comment "Specifies a license document which the license validator approves."@en ;
+          rdfs:label "approves"@en .
 
 
 ###  http://www.fgw.net/core#author
 :author rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf dcterms:creator ,
                            foaf:maker ;
+        rdf:type owl:FunctionalProperty ;
         rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :LicenseDocument
+                      owl:unionOf ( :Collection
+                                    :LicenseDocument
                                     :LicenseException
                                     :Work
                                   )
                     ] ;
-        rdfs:range :Agent .
+        rdfs:range :Agent ;
+        rdfs:comment "Specifies the author."@en ;
+        rdfs:label "author"@en .
 
 
 ###  http://www.fgw.net/core#contains
@@ -77,6 +87,8 @@ spdx:member rdf:type owl:ObjectProperty .
                                     )
                       ] ;
           rdfs:range :License ;
+          rdfs:comment "Specifies a license in the set."@en ;
+          rdfs:label "contains"@en ;
           rdfs:seeAlso spdx:member ,
                        rdfs:ContainerMembershipProperty ,
                        rdfs:member .
@@ -86,6 +98,8 @@ spdx:member rdf:type owl:ObjectProperty .
 :derivedFrom rdf:type owl:ObjectProperty ;
              rdfs:domain :Work ;
              rdfs:range :Work ;
+             rdfs:comment "Specifies a work the work is a derivative of."@en ;
+             rdfs:label "derived from"@en ;
              rdfs:seeAlso dcterms:source .
 
 
@@ -94,18 +108,33 @@ spdx:member rdf:type owl:ObjectProperty .
            rdfs:domain :LicenseWithExceptions ;
            rdfs:range :LicenseException ;
            owl:propertyChainAxiom ( spdx:licenseException
-                                  ) .
+                                  ) ;
+           rdfs:comment "Specifies an exception applied to the license."@en ;
+           rdfs:label "exception"@en .
+
+
+###  http://www.fgw.net/core#exceptionAppliedTo
+:exceptionAppliedTo rdf:type owl:ObjectProperty ;
+                    rdfs:domain :LicenseWithExceptions ;
+                    rdfs:range :LicenseException ;
+                    rdfs:comment "exception applied to"@en ;
+                    rdfs:label "Specifies to which license the exceptions are applied."@en .
 
 
 ###  http://www.fgw.net/core#format
 :format rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf dcterms:format ;
         rdfs:domain :Work ;
-        rdfs:range :FileFormat .
+        rdfs:range :FileFormat ;
+        rdfs:comment "Specifies a format in which the work is available."@en ;
+        rdfs:label "format"@en .
 
 
 ###  http://www.fgw.net/core#foundIn
-:foundIn rdf:type owl:ObjectProperty ;
+:foundIn rdf:type owl:ObjectProperty ,
+                  owl:AsymmetricProperty ,
+                  owl:TransitiveProperty ,
+                  owl:IrreflexiveProperty ;
          rdfs:domain [ rdf:type owl:Class ;
                        owl:unionOf ( :Collection
                                      :Work
@@ -115,29 +144,46 @@ spdx:member rdf:type owl:ObjectProperty .
                       owl:unionOf ( :Collection
                                     :Platform
                                   )
-                    ] .
+                    ] ;
+         rdfs:comment "Specifies a collection or platform containing the collection or work."@en ;
+         rdfs:label "found in"@en .
 
 
 ###  http://www.fgw.net/core#hasCreated
 :hasCreated rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty .
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:InverseFunctionalProperty ;
+            rdfs:domain :Agent ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :Collection
+                                       :LicenseDocument
+                                       :LicenseException
+                                       :Work
+                                     )
+                       ] ;
+            rdfs:comment "Specifies something created by the author."@en ;
+            rdfs:label "has created"@en .
 
 
 ###  http://www.fgw.net/core#hasCreatedLicense
 :hasCreatedLicense rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf :hasCreated ;
                    owl:inverseOf :licenseAuthor ;
+                   rdf:type owl:InverseFunctionalProperty ;
                    rdfs:domain :LicenseAuthor ;
                    rdfs:range [ rdf:type owl:Class ;
                                 owl:unionOf ( :LicenseDocument
                                               :LicenseException
                                             )
-                              ] .
+                              ] ;
+                   rdfs:comment "Specifies a license document or license exception created by the license author."@en ;
+                   rdfs:label "has created license"@en .
 
 
 ###  http://www.fgw.net/core#license
 :license rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf dcterms:license ;
+         rdf:type owl:FunctionalProperty ;
          rdfs:domain :Work ;
          rdfs:range :License .
 
@@ -145,48 +191,42 @@ spdx:member rdf:type owl:ObjectProperty .
 ###  http://www.fgw.net/core#licenseAuthor
 :licenseAuthor rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :author ;
+               rdf:type owl:FunctionalProperty ;
                rdfs:domain [ rdf:type owl:Class ;
                              owl:unionOf ( :LicenseDocument
                                            :LicenseException
                                          )
                            ] ;
-               rdfs:range :LicenseAuthor .
-
-
-###  http://www.fgw.net/core#licenseDocument
-:licenseDocument rdf:type owl:ObjectProperty ;
-                 rdfs:domain :LicenseWithExceptions ;
-                 rdfs:range :LicenseException .
+               rdfs:range :LicenseAuthor ;
+               rdfs:comment "Specifies the author of the license or license exception."@en ;
+               rdfs:label "license author"@en .
 
 
 ###  http://www.fgw.net/core#licenseLevel
-:licenseLevel rdf:type owl:ObjectProperty ;
+:licenseLevel rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
               rdfs:domain :License ;
-              rdfs:range :LicenseLevel .
-
-
-###  http://www.fgw.net/core#managedBy
-:managedBy rdf:type owl:ObjectProperty ;
-           rdfs:domain :Platform ;
-           rdfs:range :Agent .
-
-
-###  http://www.fgw.net/core#profileIn
-:profileIn rdf:type owl:ObjectProperty ;
-           rdfs:domain :PlatformUser ;
-           rdfs:range :Platform .
+              rdfs:range :LicenseLevel ;
+              rdfs:comment "Specifies how restrictive a license is."@en ;
+              rdfs:label "license level"@en .
 
 
 ###  http://www.fgw.net/core#type
-:type rdf:type owl:ObjectProperty ;
+:type rdf:type owl:ObjectProperty ,
+               owl:FunctionalProperty ;
       rdfs:domain :Work ;
-      rdfs:range :WorkType .
+      rdfs:range :WorkType ;
+      rdfs:comment "Specifies the type of a work."@en ;
+      rdfs:label "type"@en .
 
 
 ###  http://www.fgw.net/core#uses
-:uses rdf:type owl:ObjectProperty ;
+:uses rdf:type owl:ObjectProperty ,
+               owl:FunctionalProperty ;
       rdfs:domain :PlatformUser ;
-      rdfs:range :Platform .
+      rdfs:range :Platform ;
+      rdfs:comment "Specifies the platform used by the user."@en ;
+      rdfs:label "uses"@en .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty
@@ -215,40 +255,40 @@ dcterms:language rdf:type owl:DatatypeProperty ;
 dcterms:source rdf:type owl:DatatypeProperty .
 
 
-###  http://www.fgw.net/core#copyleft
-:copyleft rdf:type owl:DatatypeProperty ;
-          rdfs:domain :LicenseDocument ;
-          rdfs:range xsd:boolean .
-
-
 ###  http://www.fgw.net/core#extension
 :extension rdf:type owl:DatatypeProperty ;
            rdfs:domain :FileFormat ;
-           rdfs:range xsd:token .
+           rdfs:range xsd:token ;
+           rdfs:comment "Specifies a typical extension for the format."@en ;
+           rdfs:label "extension"@en .
 
 
 ###  http://www.fgw.net/core#language
 :language rdf:type owl:DatatypeProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Collection
-                                      :Platform
-                                      :Work
-                                    )
-                      ] ;
-          rdfs:range xsd:language .
+          rdfs:range xsd:language ;
+          rdfs:comment "Specifies a language."@en ;
+          rdfs:label "language"@en .
 
 
 ###  http://www.fgw.net/core#licenseList
 :licenseList rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf :location ;
              rdfs:domain :LicenseValidator ;
-             rdfs:range xsd:anyURI .
+             rdfs:range xsd:anyURI ;
+             rdfs:comment "Specifies a URL to a list of the approved licenses."@en .
 
 
 ###  http://www.fgw.net/core#licenseSpdx
-:licenseSpdx rdf:type owl:DatatypeProperty ;
-             rdfs:domain :LicenseDocument ;
-             rdfs:range xsd:token .
+:licenseSpdx rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :LicenseDocument
+                                         :LicenseException
+                                       )
+                         ] ;
+             rdfs:range xsd:token ;
+             rdfs:comment "Specifies the SPDX identifier of the license document."@en ;
+             rdfs:label "license SPDX"@en .
 
 
 ###  http://www.fgw.net/core#location
@@ -260,31 +300,34 @@ dcterms:source rdf:type owl:DatatypeProperty .
                                       :Work
                                     )
                       ] ;
-          rdfs:range xsd:anyURI .
+          rdfs:range xsd:anyURI ;
+          rdfs:comment "Specifies a URL."@en ;
+          rdfs:label "location"@en .
 
 
 ###  http://www.fgw.net/core#mime
 :mime rdf:type owl:DatatypeProperty ;
       rdfs:domain :FileFormat ;
-      rdfs:range xsd:token .
+      rdfs:range xsd:token ;
+      rdfs:comment "Specifies the MIME type of the format."@en ;
+      rdfs:label "MIME"@en .
 
 
 ###  http://www.fgw.net/core#notice
-:notice rdf:type owl:DatatypeProperty .
-
-
-###  http://www.fgw.net/core#removeCopyleft
-:removeCopyleft rdf:type owl:DatatypeProperty ;
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :LicenseException
-                                            :LicenseWithExceptions
-                                          )
-                            ] ;
-                rdfs:range xsd:boolean .
+:notice rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Work ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Specifies a notice to be read in addition to the license."@en ;
+        rdfs:label "notice"@en .
 
 
 ###  http://www.fgw.net/core#tag
-:tag rdf:type owl:DatatypeProperty .
+:tag rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Work ;
+     rdfs:range xsd:string ;
+     rdfs:comment "Specifies a tag for the work."@en ;
+     rdfs:label "tag"@en .
 
 
 #################################################################
@@ -356,13 +399,11 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
             rdfs:subClassOf <http://schema.org/Collection> ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :author ;
-                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass :PlatformUser
+                              owl:someValuesFrom :PlatformUser
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :foundIn ;
-                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass :Platform
+                              owl:someValuesFrom :Platform
                             ] ;
             rdfs:comment "Represents a collection of works or other collections of a given platform by a user of that platform."@en ;
             rdfs:label "Collection"@en .
@@ -505,7 +546,7 @@ This means the user has to comply with the terms of all licenses in the set."""@
 :License rdf:type owl:Class ;
          owl:equivalentClass [ rdf:type owl:Restriction ;
                                owl:onProperty :licenseLevel ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                               owl:someValuesFrom :LicenseLevel
                              ] ;
          rdfs:subClassOf foaf:Document ;
          owl:disjointUnionOf ( :ConjunctiveLicenseSet
@@ -567,7 +608,11 @@ An exception can always be ignored by the user of any work using that license, s
                                         owl:onProperty :approves ;
                                         owl:someValuesFrom :LicenseDocument
                                       ] ;
-                  rdfs:subClassOf :Agent ;
+                  rdfs:subClassOf :Agent ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :licenseList ;
+                                    owl:someValuesFrom xsd:anyURI
+                                  ] ;
                   rdfs:comment """Represents an agent which provides a list of free license documents.
 When a license document is in the list it means that the agent certifies that the license qualifies as free."""@en ;
                   rdfs:label "License validator"@en .
@@ -576,22 +621,10 @@ When a license document is in the list it means that the agent certifies that th
 ###  http://www.fgw.net/core#LicenseWithExceptions
 :LicenseWithExceptions rdf:type owl:Class ;
                        rdfs:subClassOf :License ,
-                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :exception ;
-                                                                owl:someValuesFrom :LicenseException
-                                                              ]
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :licenseDocument ;
-                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                owl:onClass :LicenseDocument
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ,
                                        [ rdf:type owl:Class ;
                                          owl:unionOf ( :PermissiveLicense
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :licenseDocument ;
+                                                         owl:onProperty :exceptionAppliedTo ;
                                                          owl:someValuesFrom :CopyleftLicense
                                                        ]
                                                      )
@@ -600,17 +633,26 @@ When a license document is in the list it means that the agent certifies that th
                                          owl:complementOf [ owl:intersectionOf ( :StrongCopyleftLicense
                                                                                  [ rdf:type owl:Class ;
                                                                                    owl:complementOf [ rdf:type owl:Restriction ;
-                                                                                                      owl:onProperty :licenseDocument ;
+                                                                                                      owl:onProperty :exceptionAppliedTo ;
                                                                                                       owl:someValuesFrom :StrongCopyleftLicense
                                                                                                     ]
                                                                                  ]
                                                                                ) ;
                                                             rdf:type owl:Class
                                                           ]
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :exception ;
+                                         owl:someValuesFrom :LicenseException
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :exceptionAppliedTo ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :LicenseDocument
                                        ] ;
                        owl:hasKey ( :exception
                                   ) ,
-                                  ( :licenseDocument
+                                  ( :exceptionAppliedTo
                                   ) ;
                        rdfs:comment """Represents a license documents to which some exceptions have been applied.
 Any use in compliance with the license ignoring the exceptions is still allowed, as is ignoring any specific license exception or group of license exceptions.
@@ -645,7 +687,11 @@ However, license exceptions may allow some additional uses or remove some restri
 
 ###  http://www.fgw.net/core#PlatformUser
 :PlatformUser rdf:type owl:Class ;
-              rdfs:subClassOf :Agent ;
+              rdfs:subClassOf :Agent ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :uses ;
+                                owl:someValuesFrom :Platform
+                              ] ;
               rdfs:comment "Represents a user of some platofrm, who may have created works or collections in that platform."@en ;
               rdfs:label "Platform user"@en ;
               rdfs:seeAlso foaf:OnlineAccount .
@@ -689,9 +735,12 @@ However, license exceptions may allow some additional uses or remove some restri
                         owl:someValuesFrom :PlatformUser
                       ] ,
                       [ rdf:type owl:Restriction ;
+                        owl:onProperty :foundIn ;
+                        owl:someValuesFrom :Platform
+                      ] ,
+                      [ rdf:type owl:Restriction ;
                         owl:onProperty :license ;
-                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :License
+                        owl:someValuesFrom :License
                       ] ;
       rdfs:comment "Represents a creative work with a license for use present on a platform."@en ;
       rdfs:label "Work"@en .
