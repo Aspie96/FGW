@@ -296,8 +296,7 @@ spdx:member rdf:type owl:ObjectProperty .
 
 
 ###  http://www.fgw.net/core#workLicenseLevel
-:workLicenseLevel rdf:type owl:ObjectProperty ,
-                           owl:FunctionalProperty ;
+:workLicenseLevel rdf:type owl:ObjectProperty ;
                   rdfs:domain :Work ;
                   rdfs:range :LicenseLevel ;
                   owl:propertyChainAxiom ( :license
