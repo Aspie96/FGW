@@ -1,16 +1,56 @@
 @prefix : <http://www.fgw.net/formats#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix fgwcore: <http://www.fgw.net/core#> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @base <http://www.fgw.net/formats> .
 
 <http://www.fgw.net/formats> rdf:type owl:Ontology ;
-                              rdfs:label "Information about file formats and types of work."@en .
+                              dc:creator "Valentino Giudice"^^xsd:string ;
+                              dc:date "2021-07-14T00:00:00-00:00"^^xsd:dateTimeStamp ;
+                              dc:description "File formats and types of work in the FGW Ontology."@en ;
+                              dc:title "OGW Formats"@en ;
+                              vann:preferredNamespacePrefix "fgwf"^^xsd:token ;
+                              vann:preferredNamespaceUri "http://www.fgw.net/formats#"^^xsd:anyURI ;
+                              rdfs:label "FGW Formats"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Data properties
@@ -57,80 +97,104 @@ foaf:Image rdf:type owl:Class .
 :Audio-AAC rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "AAC"^^xsd:token ;
-           fgwcore:mime "audio/aac"^^xsd:token .
+           fgwcore:mime "audio/aac"^^xsd:token ;
+           rdfs:comment "Audio in AAC format"@en ;
+           rdfs:label "audio AAC"@en .
 
 
 ###  http://www.fgw.net/formats#Audio-MPEG
 :Audio-MPEG rdf:type owl:NamedIndividual ,
                      fgwcore:FileFormat ;
             fgwcore:extension "MP3"^^xsd:token ;
-            fgwcore:mime "audio/mpeg"^^xsd:token .
+            fgwcore:mime "audio/mpeg"^^xsd:token ;
+            rdfs:comment "Audio in MP3 format"@en ;
+            rdfs:label "audio MPEG"@en .
 
 
 ###  http://www.fgw.net/formats#Audio-OGG
 :Audio-OGG rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "OGG"^^xsd:token ;
-           fgwcore:mime "audio/ogg"^^xsd:token .
+           fgwcore:mime "audio/ogg"^^xsd:token ;
+           rdfs:comment "Audio in OGG format"@en ;
+           rdfs:label "audio OGG"@en .
 
 
 ###  http://www.fgw.net/formats#Audio-OPUS
 :Audio-OPUS rdf:type owl:NamedIndividual ,
                      fgwcore:FileFormat ;
             fgwcore:extension "OPUS"^^xsd:token ;
-            fgwcore:mime "audio/opus"^^xsd:token .
+            fgwcore:mime "audio/opus"^^xsd:token ;
+            rdfs:comment "Audio in OPUS format"@en ;
+            rdfs:label "audio OPUS"@en .
 
 
 ###  http://www.fgw.net/formats#ConceptArt
 :ConceptArt rdf:type owl:NamedIndividual ,
-                     fgwcore:WorkType .
+                     fgwcore:WorkType ;
+            rdfs:comment "Concept art"@en ;
+            rdfs:label "concept art"@en .
 
 
 ###  http://www.fgw.net/formats#Document
 :Document rdf:type owl:NamedIndividual ,
-                   fgwcore:WorkType .
+                   fgwcore:WorkType ;
+          rdfs:comment "Document which doesn't fall in other categories, such as text"@en ;
+          rdfs:label "document"@en .
 
 
 ###  http://www.fgw.net/formats#EXR
 :EXR rdf:type owl:NamedIndividual ,
               fgwcore:FileFormat ;
      fgwcore:extension "EXR"^^xsd:token ;
-     fgwcore:mime "image/aces"^^xsd:token .
+     fgwcore:mime "image/aces"^^xsd:token ;
+     rdfs:comment "EXR format for 3D models"@en ;
+     rdfs:label "EXR"@en .
 
 
 ###  http://www.fgw.net/formats#Image-BMP
 :Image-BMP rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "BMP"^^xsd:token ;
-           fgwcore:mime "image/bmp"^^xsd:token .
+           fgwcore:mime "image/bmp"^^xsd:token ;
+           rdfs:comment "BMP format"@en ;
+           rdfs:label "image BMP"@en .
 
 
 ###  http://www.fgw.net/formats#Image-GIF
 :Image-GIF rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "GIF"^^xsd:token ,
-                             "image/gif"^^xsd:token .
+                             "image/gif"^^xsd:token ;
+           rdfs:comment "GIF format"@en ;
+           rdfs:label "Image GIF"@en .
 
 
 ###  http://www.fgw.net/formats#Image-JPEG
 :Image-JPEG rdf:type owl:NamedIndividual ,
                      fgwcore:FileFormat ;
             fgwcore:extension "JPEG"^^xsd:token ;
-            fgwcore:mime "image/jpeg"^^xsd:token .
+            fgwcore:mime "image/jpeg"^^xsd:token ;
+            rdfs:comment "JPEG format"@en ;
+            rdfs:label "Image JPEG"@en .
 
 
 ###  http://www.fgw.net/formats#Image-PNG
 :Image-PNG rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "PNG"^^xsd:token ;
-           fgwcore:mime "image/png"^^xsd:token .
+           fgwcore:mime "image/png"^^xsd:token ;
+           rdfs:comment "PNG format"@en ;
+           rdfs:label "Image PNG"@en .
 
 
 ###  http://www.fgw.net/formats#Image-SVG
 :Image-SVG rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "SVG"^^xsd:token ;
-           fgwcore:mime "image/svg+xml"^^xsd:token .
+           fgwcore:mime "image/svg+xml"^^xsd:token ;
+           rdfs:comment "SVG format"@en ;
+           rdfs:label "Image SVG"@en .
 
 
 ###  http://www.fgw.net/formats#Image-TIFF
@@ -138,12 +202,16 @@ foaf:Image rdf:type owl:Class .
                      fgwcore:FileFormat ;
             fgwcore:extension "TF"^^xsd:token ,
                               "TIFF"^^xsd:token ;
-            fgwcore:mime "image/tiff"^^xsd:token .
+            fgwcore:mime "image/tiff"^^xsd:token ;
+            rdfs:comment "Tiff format"@en ;
+            rdfs:label "Image TIFF"@en .
 
 
 ###  http://www.fgw.net/formats#Music
 :Music rdf:type owl:NamedIndividual ,
                 fgwcore:WorkType ;
+       rdfs:comment "Music"@en ;
+       rdfs:label "music"@en ;
        rdfs:seeAlso dcmitype:Sound .
 
 
@@ -151,72 +219,94 @@ foaf:Image rdf:type owl:Class .
 :OBJ rdf:type owl:NamedIndividual ,
               fgwcore:FileFormat ;
      fgwcore:extension "OBJ"^^xsd:token ;
-     fgwcore:mime "text/plain"^^xsd:token .
+     fgwcore:mime "text/plain"^^xsd:token ;
+     rdfs:comment "OBJ format for 3D models"@en ;
+     rdfs:label "OBJ"@en .
 
 
 ###  http://www.fgw.net/formats#SBSAR
 :SBSAR rdf:type owl:NamedIndividual ,
                 fgwcore:FileFormat ;
        fgwcore:extension "SBSAR"^^xsd:token ,
-                         "application/octet-stream"^^xsd:token .
+                         "application/octet-stream"^^xsd:token ;
+       rdfs:comment "SBSAR format for textures"@en ;
+       rdfs:label "SBAR"@en .
 
 
 ###  http://www.fgw.net/formats#SoundEffect
 :SoundEffect rdf:type owl:NamedIndividual ,
                       fgwcore:WorkType ;
+             rdfs:comment "Sound effect"@en ;
+             rdfs:label "sound effect"@en ;
              rdfs:seeAlso dcmitype:Sound .
 
 
 ###  http://www.fgw.net/formats#Texture
 :Texture rdf:type owl:NamedIndividual ,
-                  fgwcore:WorkType .
+                  fgwcore:WorkType ;
+         rdfs:comment "Texture for 3D models"@en ;
+         rdfs:label "texture"@en .
 
 
 ###  http://www.fgw.net/formats#Video-AVI
 :Video-AVI rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "AVI"^^xsd:token ;
-           fgwcore:mime "video/x-msvideo"^^xsd:token .
+           fgwcore:mime "video/x-msvideo"^^xsd:token ;
+           rdfs:comment "AVI fomat"@en ;
+           rdfs:label "video AVI"@en .
 
 
 ###  http://www.fgw.net/formats#Video-MP2T
 :Video-MP2T rdf:type owl:NamedIndividual ,
                      fgwcore:FileFormat ;
             fgwcore:mime "TS"^^xsd:token ,
-                         "video/mp2t"^^xsd:token .
+                         "video/mp2t"^^xsd:token ;
+            rdfs:comment "MP2T format"@en ;
+            rdfs:label "video MP2T"@en .
 
 
 ###  http://www.fgw.net/formats#Video-MP4
 :Video-MP4 rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "MP4"^^xsd:token ;
-           fgwcore:mime "video/mp4"^^xsd:token .
+           fgwcore:mime "video/mp4"^^xsd:token ;
+           rdfs:comment "MP4 format"@en ;
+           rdfs:label "video MP4"@en .
 
 
 ###  http://www.fgw.net/formats#Video-MPEG
 :Video-MPEG rdf:type owl:NamedIndividual ,
                      fgwcore:FileFormat ;
             fgwcore:extension "MPEG"^^xsd:token ;
-            fgwcore:mime "video/mpeg"^^xsd:token .
+            fgwcore:mime "video/mpeg"^^xsd:token ;
+            rdfs:comment "MPEG format"@en ;
+            rdfs:label "video MPEG"@en .
 
 
 ###  http://www.fgw.net/formats#Video-OGG
 :Video-OGG rdf:type owl:NamedIndividual ,
                     fgwcore:FileFormat ;
            fgwcore:extension "OGV"^^xsd:token ;
-           fgwcore:mime "video/ogg"^^xsd:token .
+           fgwcore:mime "video/ogg"^^xsd:token ;
+           rdfs:comment "OGG video"@en ;
+           rdfs:label "video OGG"@en .
 
 
 ###  http://www.fgw.net/formats#2DArt
 <http://www.fgw.net/formats#2DArt> rdf:type owl:NamedIndividual ,
                                             fgwcore:WorkType ;
+                                   rdfs:comment "2D artworks such as images (including animated)"@en ;
+                                   rdfs:label "2D art"@en ;
                                    rdfs:seeAlso dcmitype:Image ,
                                                 foaf:Image .
 
 
 ###  http://www.fgw.net/formats#3DModel
 <http://www.fgw.net/formats#3DModel> rdf:type owl:NamedIndividual ,
-                                              fgwcore:WorkType .
+                                              fgwcore:WorkType ;
+                                     rdfs:comment "3D models"@en ;
+                                     rdfs:label "3D model"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
