@@ -467,6 +467,14 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
 ###  http://www.fgw.net/core#Agent
 :Agent rdf:type owl:Class ;
        owl:equivalentClass foaf:Agent ;
+       owl:disjointWith :Collection ,
+                        :FileFormat ,
+                        :License ,
+                        :LicenseException ,
+                        :LicenseLevel ,
+                        :Platform ,
+                        :Work ,
+                        :WorkType ;
        rdfs:comment "Represents an agent which is responsable for actions."@en ;
        rdfs:label "Agent"@en .
 
@@ -482,7 +490,12 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
                               owl:onProperty :foundIn ;
                               owl:someValuesFrom :Platform
                             ] ;
-            owl:disjointWith :Work ;
+            owl:disjointWith :FileFormat ,
+                             :License ,
+                             :LicenseException ,
+                             :LicenseLevel ,
+                             :Work ,
+                             :WorkType ;
             rdfs:comment "Represents a collection of works or other collections of a given platform by a user of that platform."@en ;
             rdfs:label "Collection"@en .
 
@@ -616,6 +629,12 @@ This means the user has to comply with the terms of all licenses in the set."""@
                               owl:onProperty :extension ;
                               owl:someValuesFrom xsd:token
                             ] ;
+            owl:disjointWith :License ,
+                             :LicenseException ,
+                             :LicenseLevel ,
+                             :Platform ,
+                             :Work ,
+                             :WorkType ;
             rdfs:comment "Represents a type of file and its encoding."@en ;
             rdfs:label "File format"@en .
 
@@ -643,6 +662,11 @@ This means the user has to comply with the terms of all licenses in the set."""@
                                owl:someValuesFrom :LicenseLevel
                              ] ;
          rdfs:subClassOf foaf:Document ;
+         owl:disjointWith :LicenseException ,
+                          :LicenseLevel ,
+                          :Platform ,
+                          :Work ,
+                          :WorkType ;
          owl:disjointUnionOf ( :ConjunctiveLicenseSet
                                :LicenseDocument
                                :LicenseWithExceptions
@@ -679,6 +703,10 @@ A license is a potentially complex entity. It may correspond to a simple license
 
 ###  http://www.fgw.net/core#LicenseException
 :LicenseException rdf:type owl:Class ;
+                  owl:disjointWith :LicenseLevel ,
+                                   :Platform ,
+                                   :Work ,
+                                   :WorkType ;
                   rdfs:comment """Represents an exception which can be applied to a license document, reducing its restriction.
 An exception can always be ignored by the user of any work using that license, since it merely provides additional permissions."""@en ;
                   rdfs:label "License exception"@en .
@@ -692,6 +720,9 @@ An exception can always be ignored by the user of any work using that license, s
                                                 :weakCopyleft
                                               )
                                   ] ;
+              owl:disjointWith :Platform ,
+                               :Work ,
+                               :WorkType ;
               rdfs:comment "Represents how restrictive a license is."@en ;
               rdfs:label "License level"@en .
 
@@ -775,6 +806,8 @@ However, license exceptions may allow some additional uses or remove some restri
                             owl:onProperty :location ;
                             owl:someValuesFrom xsd:anyURI
                           ] ;
+          owl:disjointWith :Work ,
+                           :WorkType ;
           rdfs:comment "Represents a website in which works are published."@en ;
           rdfs:label "Platform"@en .
 
@@ -836,6 +869,7 @@ However, license exceptions may allow some additional uses or remove some restri
                         owl:onProperty :license ;
                         owl:someValuesFrom :License
                       ] ;
+      owl:disjointWith :WorkType ;
       rdfs:comment "Represents a creative work with a license for use present on a platform."@en ;
       rdfs:label "Work"@en .
 
@@ -889,6 +923,31 @@ foaf:OnlineAccount rdf:type owl:Class .
                        :LicenseLevel ;
               rdfs:comment "Weak copyleft"@en ;
               rdfs:label "weak copyleft"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :permissive
+                        :strongCopyleft
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :permissive
+                        :weakCopyleft
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :strongCopyleft
+                        :weakCopyleft
+                      )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
