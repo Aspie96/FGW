@@ -1,0 +1,297 @@
+@prefix : <http://www.fgw.net/inferred#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.fgw.net/inferred> .
+
+<http://www.fgw.net/inferred> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://creativecommons.org/ns#creator
+<http://creativecommons.org/ns#creator> rdf:type owl:ObjectProperty ;
+                                        owl:equivalentProperty <http://www.fgw.net/core#licenseAuthor> ;
+                                        rdfs:subPropertyOf <http://www.fgw.net/core#author> .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/format
+<http://purl.org/dc/terms/format> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:ObjectProperty .
+
+
+###  http://www.fgw.net/core#author
+<http://www.fgw.net/core#author> rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ,
+                                                    <http://xmlns.com/foaf/0.1/maker> .
+
+
+###  http://www.fgw.net/core#collects
+<http://www.fgw.net/core#collects> rdf:type owl:ObjectProperty .
+
+
+###  http://www.fgw.net/core#collectsWork
+<http://www.fgw.net/core#collectsWork> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf <http://www.fgw.net/core#collects> .
+
+
+###  http://www.fgw.net/core#format
+<http://www.fgw.net/core#format> rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf <http://purl.org/dc/terms/format> .
+
+
+###  http://www.fgw.net/core#hasCreated
+<http://www.fgw.net/core#hasCreated> rdf:type owl:ObjectProperty .
+
+
+###  http://www.fgw.net/core#hasCreatedLicense
+<http://www.fgw.net/core#hasCreatedLicense> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://www.fgw.net/core#hasCreated> .
+
+
+###  http://www.fgw.net/core#license
+<http://www.fgw.net/core#license> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/terms/license> .
+
+
+###  http://www.fgw.net/core#licenseAuthor
+<http://www.fgw.net/core#licenseAuthor> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf <http://www.fgw.net/core#author> .
+
+
+###  http://xmlns.com/foaf/0.1/maker
+<http://xmlns.com/foaf/0.1/maker> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> rdf:type owl:DatatypeProperty ;
+                                    owl:equivalentProperty <http://www.fgw.net/core#language> .
+
+
+###  http://www.fgw.net/core#language
+<http://www.fgw.net/core#language> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.fgw.net/core#licenseList
+<http://www.fgw.net/core#licenseList> rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf <http://www.fgw.net/core#location> .
+
+
+###  http://www.fgw.net/core#location
+<http://www.fgw.net/core#location> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/dcmitype/Image
+<http://purl.org/dc/dcmitype/Image> rdf:type owl:Class ;
+                                    owl:equivalentClass <http://xmlns.com/foaf/0.1/Image> .
+
+
+###  http://purl.org/dc/terms/Agent
+<http://purl.org/dc/terms/Agent> rdf:type owl:Class ;
+                                 owl:equivalentClass <http://www.fgw.net/core#Agent> .
+
+
+###  http://purl.org/dc/terms/FileFormat
+<http://purl.org/dc/terms/FileFormat> rdf:type owl:Class ;
+                                      owl:equivalentClass <http://www.fgw.net/core#FileFormat> .
+
+
+###  http://purl.org/dc/terms/LicenseDocument
+<http://purl.org/dc/terms/LicenseDocument> rdf:type owl:Class ;
+                                           owl:equivalentClass <http://spdx.org/rdf/terms#AnyLicenseInfo> ;
+                                           rdfs:subClassOf <http://xmlns.com/foaf/0.1/Document> .
+
+
+###  http://schema.org/Collection
+<http://schema.org/Collection> rdf:type owl:Class .
+
+
+###  http://schema.org/CreativeWork
+<http://schema.org/CreativeWork> rdf:type owl:Class .
+
+
+###  http://spdx.org/rdf/terms#AnyLicenseInfo
+<http://spdx.org/rdf/terms#AnyLicenseInfo> rdf:type owl:Class ;
+                                           owl:equivalentClass <http://www.fgw.net/core#License> ;
+                                           rdfs:subClassOf <http://xmlns.com/foaf/0.1/Document> .
+
+
+###  http://spdx.org/rdf/terms#ConjunctiveLicenseSet
+<http://spdx.org/rdf/terms#ConjunctiveLicenseSet> rdf:type owl:Class ;
+                                                  owl:equivalentClass <http://www.fgw.net/core#ConjunctiveLicenseSet> ;
+                                                  rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                                  <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                                  <http://www.fgw.net/core#License> ,
+                                                                  rdfs:Container .
+
+
+###  http://spdx.org/rdf/terms#DisjunctiveLicenseSet
+<http://spdx.org/rdf/terms#DisjunctiveLicenseSet> rdf:type owl:Class ;
+                                                  owl:equivalentClass <http://www.fgw.net/core#DisjunctiveLicenseSet> ;
+                                                  rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                                  <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                                  <http://www.fgw.net/core#License> ,
+                                                                  rdfs:Container .
+
+
+###  http://spdx.org/rdf/terms#LicenseException
+<http://spdx.org/rdf/terms#LicenseException> rdf:type owl:Class ;
+                                             owl:equivalentClass <http://www.fgw.net/core#LicenseException> .
+
+
+###  http://spdx.org/rdf/terms#SimpleLicensingInfo
+<http://spdx.org/rdf/terms#SimpleLicensingInfo> rdf:type owl:Class ;
+                                                owl:equivalentClass <http://www.fgw.net/core#LicenseDocument> ;
+                                                rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                                <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                                <http://www.fgw.net/core#License> .
+
+
+###  http://spdx.org/rdf/terms#WithExceptionOperator
+<http://spdx.org/rdf/terms#WithExceptionOperator> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.fgw.net/core#LicenseWithExceptions> .
+
+
+###  http://www.fgw.net/core#Agent
+<http://www.fgw.net/core#Agent> rdf:type owl:Class ;
+                                owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://www.fgw.net/core#Collection
+<http://www.fgw.net/core#Collection> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://schema.org/Collection> .
+
+
+###  http://www.fgw.net/core#ConjunctiveLicenseSet
+<http://www.fgw.net/core#ConjunctiveLicenseSet> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                                <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                                <http://www.fgw.net/core#License> ,
+                                                                rdfs:Container .
+
+
+###  http://www.fgw.net/core#CopyleftLicense
+<http://www.fgw.net/core#CopyleftLicense> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                          <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                          <http://www.fgw.net/core#License> .
+
+
+###  http://www.fgw.net/core#DisjunctiveLicenseSet
+<http://www.fgw.net/core#DisjunctiveLicenseSet> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                                <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                                <http://www.fgw.net/core#License> ,
+                                                                rdfs:Container .
+
+
+###  http://www.fgw.net/core#FileFormat
+<http://www.fgw.net/core#FileFormat> rdf:type owl:Class .
+
+
+###  http://www.fgw.net/core#LargeCollection
+<http://www.fgw.net/core#LargeCollection> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.fgw.net/core#Collection> .
+
+
+###  http://www.fgw.net/core#License
+<http://www.fgw.net/core#License> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://xmlns.com/foaf/0.1/Document> .
+
+
+###  http://www.fgw.net/core#LicenseAuthor
+<http://www.fgw.net/core#LicenseAuthor> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://purl.org/dc/terms/Agent> ,
+                                                        <http://www.fgw.net/core#Agent> ,
+                                                        <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://www.fgw.net/core#LicenseDocument
+<http://www.fgw.net/core#LicenseDocument> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                          <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                          <http://www.fgw.net/core#License> .
+
+
+###  http://www.fgw.net/core#LicenseException
+<http://www.fgw.net/core#LicenseException> rdf:type owl:Class .
+
+
+###  http://www.fgw.net/core#LicenseValidator
+<http://www.fgw.net/core#LicenseValidator> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://purl.org/dc/terms/Agent> ,
+                                                           <http://www.fgw.net/core#Agent> ,
+                                                           <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://www.fgw.net/core#LicenseWithExceptions
+<http://www.fgw.net/core#LicenseWithExceptions> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                                <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                                <http://www.fgw.net/core#License> .
+
+
+###  http://www.fgw.net/core#PermissiveLicense
+<http://www.fgw.net/core#PermissiveLicense> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> ,
+                                                            <http://spdx.org/rdf/terms#AnyLicenseInfo> ,
+                                                            <http://www.fgw.net/core#License> .
+
+
+###  http://www.fgw.net/core#PlatformUser
+<http://www.fgw.net/core#PlatformUser> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.org/dc/terms/Agent> ,
+                                                       <http://www.fgw.net/core#Agent> ,
+                                                       <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://www.fgw.net/core#StrongCopyleftLicense
+<http://www.fgw.net/core#StrongCopyleftLicense> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.fgw.net/core#CopyleftLicense> .
+
+
+###  http://www.fgw.net/core#WeakCopyleftLicense
+<http://www.fgw.net/core#WeakCopyleftLicense> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.fgw.net/core#CopyleftLicense> .
+
+
+###  http://www.fgw.net/core#Work
+<http://www.fgw.net/core#Work> rdf:type owl:Class ;
+                               rdfs:subClassOf <http://schema.org/CreativeWork> .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Container
+rdfs:Container rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Document
+<http://xmlns.com/foaf/0.1/Document> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Image
+<http://xmlns.com/foaf/0.1/Image> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
