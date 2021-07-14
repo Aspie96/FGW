@@ -169,9 +169,7 @@ spdx:member rdf:type owl:ObjectProperty .
 
 ###  http://www.fgw.net/core#foundIn
 :foundIn rdf:type owl:ObjectProperty ,
-                  owl:AsymmetricProperty ,
-                  owl:TransitiveProperty ,
-                  owl:IrreflexiveProperty ;
+                  owl:TransitiveProperty ;
          rdfs:domain [ rdf:type owl:Class ;
                        owl:unionOf ( :Collection
                                      :Work
