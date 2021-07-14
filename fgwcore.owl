@@ -381,7 +381,7 @@ dcterms:source rdf:type owl:DatatypeProperty .
 :notice rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
         rdfs:domain :Work ;
-        rdfs:range xsd:string ;
+        rdfs:range rdfs:Literal ;
         rdfs:comment "Specifies a notice to be read in addition to the license."@en ;
         rdfs:label "notice"@en .
 
