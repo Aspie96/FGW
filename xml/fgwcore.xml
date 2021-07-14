@@ -112,12 +112,6 @@ This is the T-box for the ontology and contains all classes, as well as individu
     
 
 
-    <!-- http://spdx.org/rdf/terms#licenseException -->
-
-    <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseException"/>
-    
-
-
     <!-- http://spdx.org/rdf/terms#member -->
 
     <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#member"/>
@@ -233,9 +227,6 @@ This is the T-box for the ontology and contains all classes, as well as individu
     <owl:ObjectProperty rdf:about="http://www.fgw.net/core#exception">
         <rdfs:domain rdf:resource="http://www.fgw.net/core#LicenseWithExceptions"/>
         <rdfs:range rdf:resource="http://www.fgw.net/core#LicenseException"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://spdx.org/rdf/terms#licenseException"/>
-        </owl:propertyChainAxiom>
         <rdfs:comment xml:lang="en">Specifies an exception applied to the license.</rdfs:comment>
         <rdfs:label xml:lang="en">exception</rdfs:label>
     </owl:ObjectProperty>

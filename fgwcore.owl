@@ -74,10 +74,6 @@ dcterms:format rdf:type owl:ObjectProperty .
 dcterms:license rdf:type owl:ObjectProperty .
 
 
-###  http://spdx.org/rdf/terms#licenseException
-spdx:licenseException rdf:type owl:ObjectProperty .
-
-
 ###  http://spdx.org/rdf/terms#member
 spdx:member rdf:type owl:ObjectProperty .
 
@@ -160,8 +156,6 @@ spdx:member rdf:type owl:ObjectProperty .
 :exception rdf:type owl:ObjectProperty ;
            rdfs:domain :LicenseWithExceptions ;
            rdfs:range :LicenseException ;
-           owl:propertyChainAxiom ( spdx:licenseException
-                                  ) ;
            rdfs:comment "Specifies an exception applied to the license."@en ;
            rdfs:label "exception"@en .
 
