@@ -427,6 +427,8 @@ fgwcore:type a owl:ObjectProperty .
 
 fgwcore:uses a owl:ObjectProperty .
 
+fgwcore:workId a owl:DatatypeProperty .
+
 fgwcore:Platform a owl:Class .
 
 fgwcore:PlatformUser a owl:Class .
