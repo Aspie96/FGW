@@ -394,6 +394,15 @@ dcterms:source rdf:type owl:DatatypeProperty .
      rdfs:label "tag"@en .
 
 
+###  http://www.fgw.net/core#workId
+:workId rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Work ;
+        rdfs:range xsd:token ;
+        rdfs:comment "An ID for the work. It is the responsability of the platform to assign it and it must be unique worldwide."@en ;
+        rdfs:label "work ID"@en .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -856,6 +865,8 @@ However, license exceptions may allow some additional uses or remove some restri
                         owl:someValuesFrom :License
                       ] ;
       owl:disjointWith :WorkType ;
+      owl:hasKey ( :workId
+                 ) ;
       rdfs:comment "Represents a creative work with a license for use present on a platform."@en ;
       rdfs:label "Work"@en .
 
