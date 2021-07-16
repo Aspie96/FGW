@@ -443,6 +443,7 @@ ambientcga:3DBread004 a fgwcore:Work,
     fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
     fgwcore:tag "Bread"^^xsd:token ;
     fgwcore:type fgwf:3DModel ;
+    fgwcore:workId "ambientcg:3DBread004"^^xsd:token ;
     rdfs:comment "3DBread004 - 3DBread - 3DModel"@en .
 
 ambientcga:3DBread005 a fgwcore:Work,
@@ -456,6 +457,7 @@ ambientcga:3DBread005 a fgwcore:Work,
     fgwcore:tag "Bagel"^^xsd:token,
         "Bread"^^xsd:token ;
     fgwcore:type fgwf:3DModel ;
+    fgwcore:workId "ambientcg:3DBread005"^^xsd:token ;
     rdfs:comment "3DBread005 - 3DBread - 3DModel"@en .
 
 ambientcga:3DBread006 a fgwcore:Work,
@@ -468,6 +470,7 @@ ambientcga:3DBread006 a fgwcore:Work,
     fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
     fgwcore:tag "Bread"^^xsd:token ;
     fgwcore:type fgwf:3DModel ;
+    fgwcore:workId "ambientcg:3DBread006"^^xsd:token ;
     rdfs:comment "3DBread006 - 3DBread - 3DModel"@en .
 
 ambientcga:3DBread007 a fgwcore:Work,
@@ -480,6 +483,7 @@ ambientcga:3DBread007 a fgwcore:Work,
     fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
     fgwcore:tag "Bread"^^xsd:token ;
     fgwcore:type fgwf:3DModel ;
+    fgwcore:workId "ambientcg:3DBread007"^^xsd:token ;
     rdfs:comment "3DBread007 - 3DBread - 3DModel"@en .
 
 ambientcga:3DCookie001 a fgwcore:Work,
@@ -492,6 +496,7 @@ ambientcga:3DCookie001 a fgwcore:Work,
     fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
     fgwcore:tag "Cookie"^^xsd:token ;
     fgwcore:type fgwf:3DModel ;
+    fgwcore:workId "ambientcg:3DCookie001"^^xsd:token ;
     rdfs:comment "3DCookie001 - 3DCookie - 3DModel"@en .
 
 ambientcga:3DPastry001 a fgwcore:Work,
@@ -505,6 +510,7 @@ ambientcga:3DPastry001 a fgwcore:Work,
     fgwcore:tag "Croissant"^^xsd:token,
         "Pastry"^^xsd:token ;
     fgwcore:type fgwf:3DModel ;
+    fgwcore:workId "ambientcg:3DPastry001"^^xsd:token ;
     rdfs:comment "3DPastry001 - 3DPastry - 3DModel"@en .
 
 ambientcga:3DPastry002 a fgwcore:Work,
@@ -519,6 +525,7 @@ ambientcga:3DPastry002 a fgwcore:Work,
         "Sausage"^^xsd:token,
         "roll"^^xsd:token ;
     fgwcore:type fgwf:3DModel ;
+    fgwcore:workId "ambientcg:3DPastry002"^^xsd:token ;
     rdfs:comment "3DPastry002 - 3DPastry - 3DModel"@en .
 
 ambientcga:Bricks054 a fgwcore:Work,
@@ -536,6 +543,7 @@ ambientcga:Bricks054 a fgwcore:Work,
         "Wall"^^xsd:token,
         "brown"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks054"^^xsd:token ;
     rdfs:comment "Bricks054 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks055 a fgwcore:Work,
@@ -554,6 +562,7 @@ ambientcga:Bricks055 a fgwcore:Work,
         "brown"^^xsd:token,
         "grey"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks055"^^xsd:token ;
     rdfs:comment "Bricks055 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks056 a fgwcore:Work,
@@ -572,6 +581,7 @@ ambientcga:Bricks056 a fgwcore:Work,
         "black"^^xsd:token,
         "grey"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks056"^^xsd:token ;
     rdfs:comment "Bricks056 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks057 a fgwcore:Work,
@@ -589,6 +599,7 @@ ambientcga:Bricks057 a fgwcore:Work,
         "Wall"^^xsd:token,
         "brown"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks057"^^xsd:token ;
     rdfs:comment "Bricks057 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks058 a fgwcore:Work,
@@ -606,6 +617,7 @@ ambientcga:Bricks058 a fgwcore:Work,
         "Wall"^^xsd:token,
         "black"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks058"^^xsd:token ;
     rdfs:comment "Bricks058 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks059 a fgwcore:Work,
@@ -623,6 +635,7 @@ ambientcga:Bricks059 a fgwcore:Work,
         "Wall"^^xsd:token,
         "red"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks059"^^xsd:token ;
     rdfs:comment "Bricks059 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks060 a fgwcore:Work,
@@ -642,6 +655,7 @@ ambientcga:Bricks060 a fgwcore:Work,
         "bright"^^xsd:token,
         "light"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks060"^^xsd:token ;
     rdfs:comment "Bricks060 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks061 a fgwcore:Work,
@@ -660,6 +674,7 @@ ambientcga:Bricks061 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks061"^^xsd:token ;
     rdfs:comment "Bricks061 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks062 a fgwcore:Work,
@@ -676,6 +691,7 @@ ambientcga:Bricks062 a fgwcore:Work,
         "grunge"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks062"^^xsd:token ;
     rdfs:comment "Bricks062 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks063 a fgwcore:Work,
@@ -693,6 +709,7 @@ ambientcga:Bricks063 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks063"^^xsd:token ;
     rdfs:comment "Bricks063 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks064 a fgwcore:Work,
@@ -710,6 +727,7 @@ ambientcga:Bricks064 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks064"^^xsd:token ;
     rdfs:comment "Bricks064 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks065 a fgwcore:Work,
@@ -727,6 +745,7 @@ ambientcga:Bricks065 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks065"^^xsd:token ;
     rdfs:comment "Bricks065 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks066 a fgwcore:Work,
@@ -744,6 +763,7 @@ ambientcga:Bricks066 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks066"^^xsd:token ;
     rdfs:comment "Bricks066 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks067 a fgwcore:Work,
@@ -761,6 +781,7 @@ ambientcga:Bricks067 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks067"^^xsd:token ;
     rdfs:comment "Bricks067 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks068 a fgwcore:Work,
@@ -778,6 +799,7 @@ ambientcga:Bricks068 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks068"^^xsd:token ;
     rdfs:comment "Bricks068 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks069 a fgwcore:Work,
@@ -795,6 +817,7 @@ ambientcga:Bricks069 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks069"^^xsd:token ;
     rdfs:comment "Bricks069 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks070 a fgwcore:Work,
@@ -813,6 +836,7 @@ ambientcga:Bricks070 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks070"^^xsd:token ;
     rdfs:comment "Bricks070 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Bricks071 a fgwcore:Work,
@@ -831,6 +855,7 @@ ambientcga:Bricks071 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Bricks071"^^xsd:token ;
     rdfs:comment "Bricks071 - Bricks - PhotoTexturePBR"@en .
 
 ambientcga:Concrete035 a fgwcore:Work,
@@ -849,6 +874,7 @@ ambientcga:Concrete035 a fgwcore:Work,
         "plaster"^^xsd:token,
         "rough"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Concrete035"^^xsd:token ;
     rdfs:comment "Concrete035 - Concrete - PhotoTexturePBR"@en .
 
 ambientcga:Concrete036 a fgwcore:Work,
@@ -867,6 +893,7 @@ ambientcga:Concrete036 a fgwcore:Work,
         "plaster"^^xsd:token,
         "smooth"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Concrete036"^^xsd:token ;
     rdfs:comment "Concrete036 - Concrete - PhotoTexturePBR"@en .
 
 ambientcga:Grass003 a fgwcore:Work,
@@ -883,6 +910,7 @@ ambientcga:Grass003 a fgwcore:Work,
         "green"^^xsd:token,
         "ground"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Grass003"^^xsd:token ;
     rdfs:comment "Grass003 - Grass - PhotoTexturePBR"@en .
 
 ambientcga:Grass004 a fgwcore:Work,
@@ -899,6 +927,7 @@ ambientcga:Grass004 a fgwcore:Work,
         "green"^^xsd:token,
         "ground"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Grass004"^^xsd:token ;
     rdfs:comment "Grass004 - Grass - PhotoTexturePBR"@en .
 
 ambientcga:Gravel022 a fgwcore:Work,
@@ -919,6 +948,7 @@ ambientcga:Gravel022 a fgwcore:Work,
         "pebbles"^^xsd:token,
         "stone"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Gravel022"^^xsd:token ;
     rdfs:comment "Gravel022 - Gravel - PhotoTexturePBR"@en .
 
 ambientcga:Gravel023 a fgwcore:Work,
@@ -941,6 +971,7 @@ ambientcga:Gravel023 a fgwcore:Work,
         "stone"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Gravel023"^^xsd:token ;
     rdfs:comment "Gravel023 - Gravel - PhotoTexturePBR"@en .
 
 ambientcga:Gravel024 a fgwcore:Work,
@@ -963,6 +994,7 @@ ambientcga:Gravel024 a fgwcore:Work,
         "pebbles"^^xsd:token,
         "stone"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Gravel024"^^xsd:token ;
     rdfs:comment "Gravel024 - Gravel - PhotoTexturePBR"@en .
 
 ambientcga:Gravel025 a fgwcore:Work,
@@ -985,6 +1017,7 @@ ambientcga:Gravel025 a fgwcore:Work,
         "stone"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Gravel025"^^xsd:token ;
     rdfs:comment "Gravel025 - Gravel - PhotoTexturePBR"@en .
 
 ambientcga:Gravel026 a fgwcore:Work,
@@ -1006,6 +1039,7 @@ ambientcga:Gravel026 a fgwcore:Work,
         "spotted"^^xsd:token,
         "stone"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Gravel026"^^xsd:token ;
     rdfs:comment "Gravel026 - Gravel - PhotoTexturePBR"@en .
 
 ambientcga:Gravel027 a fgwcore:Work,
@@ -1026,6 +1060,7 @@ ambientcga:Gravel027 a fgwcore:Work,
         "stone"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Gravel027"^^xsd:token ;
     rdfs:comment "Gravel027 - Gravel - PhotoTexturePBR"@en .
 
 ambientcga:Gravel028 a fgwcore:Work,
@@ -1047,6 +1082,7 @@ ambientcga:Gravel028 a fgwcore:Work,
         "smooth"^^xsd:token,
         "stone"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Gravel028"^^xsd:token ;
     rdfs:comment "Gravel028 - Gravel - PhotoTexturePBR"@en .
 
 ambientcga:Gravel029 a fgwcore:Work,
@@ -1070,6 +1106,7 @@ ambientcga:Gravel029 a fgwcore:Work,
         "stone"^^xsd:token,
         "wet"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Gravel029"^^xsd:token ;
     rdfs:comment "Gravel029 - Gravel - PhotoTexturePBR"@en .
 
 ambientcga:Ground043 a fgwcore:Work,
@@ -1087,6 +1124,7 @@ ambientcga:Ground043 a fgwcore:Work,
         "Ground"^^xsd:token,
         "Sand"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Ground043"^^xsd:token ;
     rdfs:comment "Ground043 - Ground - PhotoTexturePBR"@en .
 
 ambientcga:Ground044 a fgwcore:Work,
@@ -1104,6 +1142,7 @@ ambientcga:Ground044 a fgwcore:Work,
         "Ground"^^xsd:token,
         "Sand"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Ground044"^^xsd:token ;
     rdfs:comment "Ground044 - Ground - PhotoTexturePBR"@en .
 
 ambientcga:Ground045 a fgwcore:Work,
@@ -1121,6 +1160,7 @@ ambientcga:Ground045 a fgwcore:Work,
         "Ground"^^xsd:token,
         "Sand"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Ground045"^^xsd:token ;
     rdfs:comment "Ground045 - Ground - PhotoTexturePBR"@en .
 
 ambientcga:Ground046 a fgwcore:Work,
@@ -1138,6 +1178,7 @@ ambientcga:Ground046 a fgwcore:Work,
         "Ground"^^xsd:token,
         "Sand"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Ground046"^^xsd:token ;
     rdfs:comment "Ground046 - Ground - PhotoTexturePBR"@en .
 
 ambientcga:Ground047 a fgwcore:Work,
@@ -1155,6 +1196,7 @@ ambientcga:Ground047 a fgwcore:Work,
         "Ground"^^xsd:token,
         "Sand"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Ground047"^^xsd:token ;
     rdfs:comment "Ground047 - Ground - PhotoTexturePBR"@en .
 
 ambientcga:Ground048 a fgwcore:Work,
@@ -1172,6 +1214,7 @@ ambientcga:Ground048 a fgwcore:Work,
         "ground"^^xsd:token,
         "soil"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Ground048"^^xsd:token ;
     rdfs:comment "Ground048 - Ground - PhotoTexturePBR"@en .
 
 ambientcga:LeafSet022 a fgwcore:Work,
@@ -1188,6 +1231,7 @@ ambientcga:LeafSet022 a fgwcore:Work,
         "leaf"^^xsd:token,
         "leaves"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:LeafSet022"^^xsd:token ;
     rdfs:comment "LeafSet022 - LeafSet - AtlasPBR"@en .
 
 ambientcga:Marble016 a fgwcore:Work,
@@ -1205,6 +1249,7 @@ ambientcga:Marble016 a fgwcore:Work,
         "reflective"^^xsd:token,
         "shiny"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble016"^^xsd:token ;
     rdfs:comment "Marble016 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble017 a fgwcore:Work,
@@ -1222,6 +1267,7 @@ ambientcga:Marble017 a fgwcore:Work,
         "reflective"^^xsd:token,
         "rough"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble017"^^xsd:token ;
     rdfs:comment "Marble017 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble018 a fgwcore:Work,
@@ -1240,6 +1286,7 @@ ambientcga:Marble018 a fgwcore:Work,
         "rough"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble018"^^xsd:token ;
     rdfs:comment "Marble018 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble019 a fgwcore:Work,
@@ -1258,6 +1305,7 @@ ambientcga:Marble019 a fgwcore:Work,
         "rough"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble019"^^xsd:token ;
     rdfs:comment "Marble019 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble020 a fgwcore:Work,
@@ -1275,6 +1323,7 @@ ambientcga:Marble020 a fgwcore:Work,
         "reflective"^^xsd:token,
         "shiny"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble020"^^xsd:token ;
     rdfs:comment "Marble020 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble021 a fgwcore:Work,
@@ -1293,6 +1342,7 @@ ambientcga:Marble021 a fgwcore:Work,
         "shiny"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble021"^^xsd:token ;
     rdfs:comment "Marble021 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble022 a fgwcore:Work,
@@ -1310,6 +1360,7 @@ ambientcga:Marble022 a fgwcore:Work,
         "reflective"^^xsd:token,
         "shiny"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble022"^^xsd:token ;
     rdfs:comment "Marble022 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble023 a fgwcore:Work,
@@ -1330,6 +1381,7 @@ ambientcga:Marble023 a fgwcore:Work,
         "reflective"^^xsd:token,
         "shiny"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble023"^^xsd:token ;
     rdfs:comment "Marble023 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble024 a fgwcore:Work,
@@ -1349,6 +1401,7 @@ ambientcga:Marble024 a fgwcore:Work,
         "reflective"^^xsd:token,
         "shiny"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble024"^^xsd:token ;
     rdfs:comment "Marble024 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:Marble025 a fgwcore:Work,
@@ -1365,6 +1418,7 @@ ambientcga:Marble025 a fgwcore:Work,
         "rough"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Marble025"^^xsd:token ;
     rdfs:comment "Marble025 - Marble - PhotoTexturePBR"@en .
 
 ambientcga:PaintedBricks001 a fgwcore:Work,
@@ -1384,6 +1438,7 @@ ambientcga:PaintedBricks001 a fgwcore:Work,
         "painted"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:PaintedBricks001"^^xsd:token ;
     rdfs:comment "PaintedBricks001 - PaintedBricks - PhotoTexturePBR"@en .
 
 ambientcga:PaintedBricks002 a fgwcore:Work,
@@ -1405,6 +1460,7 @@ ambientcga:PaintedBricks002 a fgwcore:Work,
         "wall"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:PaintedBricks002"^^xsd:token ;
     rdfs:comment "PaintedBricks002 - PaintedBricks - PhotoTexturePBR"@en .
 
 ambientcga:PaintedBricks003 a fgwcore:Work,
@@ -1426,6 +1482,7 @@ ambientcga:PaintedBricks003 a fgwcore:Work,
         "smooth"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:PaintedBricks003"^^xsd:token ;
     rdfs:comment "PaintedBricks003 - PaintedBricks - PhotoTexturePBR"@en .
 
 ambientcga:PaintedBricks004 a fgwcore:Work,
@@ -1444,6 +1501,7 @@ ambientcga:PaintedBricks004 a fgwcore:Work,
         "smooth"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:PaintedBricks004"^^xsd:token ;
     rdfs:comment "PaintedBricks004 - PaintedBricks - PhotoTexturePBR"@en .
 
 ambientcga:PaintedBricks005 a fgwcore:Work,
@@ -1462,6 +1520,7 @@ ambientcga:PaintedBricks005 a fgwcore:Work,
         "damaged"^^xsd:token,
         "paint"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:PaintedBricks005"^^xsd:token ;
     rdfs:comment "PaintedBricks005 - PaintedBricks - PhotoTexturePBR"@en .
 
 ambientcga:PaintedPlaster017 a fgwcore:Work,
@@ -1478,6 +1537,7 @@ ambientcga:PaintedPlaster017 a fgwcore:Work,
         "plaster"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:PaintedPlaster017"^^xsd:token ;
     rdfs:comment "PaintedPlaster017 - PaintedPlaster - PhotoTexturePBR"@en .
 
 ambientcga:PaintedPlaster018 a fgwcore:Work,
@@ -1495,6 +1555,7 @@ ambientcga:PaintedPlaster018 a fgwcore:Work,
         "plaster"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:PaintedPlaster018"^^xsd:token ;
     rdfs:comment "PaintedPlaster018 - PaintedPlaster - PhotoTexturePBR"@en .
 
 ambientcga:Paper004 a fgwcore:Work,
@@ -1511,6 +1572,7 @@ ambientcga:Paper004 a fgwcore:Work,
         "packing"^^xsd:token,
         "paper"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Paper004"^^xsd:token ;
     rdfs:comment "Paper004 - Paper - PhotoTexturePBR"@en .
 
 ambientcga:Rock041 a fgwcore:Work,
@@ -1526,6 +1588,7 @@ ambientcga:Rock041 a fgwcore:Work,
         "rock"^^xsd:token,
         "smooth"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Rock041"^^xsd:token ;
     rdfs:comment "Rock041 - Rock - PhotoTexturePBR"@en .
 
 ambientcga:Tiles090 a fgwcore:Work,
@@ -1545,6 +1608,7 @@ ambientcga:Tiles090 a fgwcore:Work,
         "random"^^xsd:token,
         "tiles"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles090"^^xsd:token ;
     rdfs:comment "Tiles090 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles091 a fgwcore:Work,
@@ -1564,6 +1628,7 @@ ambientcga:Tiles091 a fgwcore:Work,
         "random"^^xsd:token,
         "tiles"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles091"^^xsd:token ;
     rdfs:comment "Tiles091 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles092 a fgwcore:Work,
@@ -1583,6 +1648,7 @@ ambientcga:Tiles092 a fgwcore:Work,
         "random"^^xsd:token,
         "tiles"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles092"^^xsd:token ;
     rdfs:comment "Tiles092 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles093 a fgwcore:Work,
@@ -1602,6 +1668,7 @@ ambientcga:Tiles093 a fgwcore:Work,
         "random"^^xsd:token,
         "tiles"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles093"^^xsd:token ;
     rdfs:comment "Tiles093 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles094 a fgwcore:Work,
@@ -1622,6 +1689,7 @@ ambientcga:Tiles094 a fgwcore:Work,
         "tiles"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles094"^^xsd:token ;
     rdfs:comment "Tiles094 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles095 a fgwcore:Work,
@@ -1641,6 +1709,7 @@ ambientcga:Tiles095 a fgwcore:Work,
         "tiles"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles095"^^xsd:token ;
     rdfs:comment "Tiles095 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles096 a fgwcore:Work,
@@ -1661,6 +1730,7 @@ ambientcga:Tiles096 a fgwcore:Work,
         "tiles"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles096"^^xsd:token ;
     rdfs:comment "Tiles096 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles097 a fgwcore:Work,
@@ -1680,6 +1750,7 @@ ambientcga:Tiles097 a fgwcore:Work,
         "tiles"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles097"^^xsd:token ;
     rdfs:comment "Tiles097 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles098 a fgwcore:Work,
@@ -1697,6 +1768,7 @@ ambientcga:Tiles098 a fgwcore:Work,
         "paving"^^xsd:token,
         "tiles"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles098"^^xsd:token ;
     rdfs:comment "Tiles098 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles099 a fgwcore:Work,
@@ -1716,6 +1788,7 @@ ambientcga:Tiles099 a fgwcore:Work,
         "painted"^^xsd:token,
         "pattern"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles099"^^xsd:token ;
     rdfs:comment "Tiles099 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles100 a fgwcore:Work,
@@ -1735,6 +1808,7 @@ ambientcga:Tiles100 a fgwcore:Work,
         "painted"^^xsd:token,
         "pattern"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles100"^^xsd:token ;
     rdfs:comment "Tiles100 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles101 a fgwcore:Work,
@@ -1754,6 +1828,7 @@ ambientcga:Tiles101 a fgwcore:Work,
         "painted"^^xsd:token,
         "pattern"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles101"^^xsd:token ;
     rdfs:comment "Tiles101 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles102 a fgwcore:Work,
@@ -1773,6 +1848,7 @@ ambientcga:Tiles102 a fgwcore:Work,
         "painted"^^xsd:token,
         "pattern"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles102"^^xsd:token ;
     rdfs:comment "Tiles102 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles103 a fgwcore:Work,
@@ -1792,6 +1868,7 @@ ambientcga:Tiles103 a fgwcore:Work,
         "painted"^^xsd:token,
         "pattern"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles103"^^xsd:token ;
     rdfs:comment "Tiles103 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles104 a fgwcore:Work,
@@ -1811,6 +1888,7 @@ ambientcga:Tiles104 a fgwcore:Work,
         "painted"^^xsd:token,
         "pattern"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles104"^^xsd:token ;
     rdfs:comment "Tiles104 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles105 a fgwcore:Work,
@@ -1827,6 +1905,7 @@ ambientcga:Tiles105 a fgwcore:Work,
         "tiles"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles105"^^xsd:token ;
     rdfs:comment "Tiles105 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles106 a fgwcore:Work,
@@ -1843,6 +1922,7 @@ ambientcga:Tiles106 a fgwcore:Work,
         "black"^^xsd:token,
         "tiles"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles106"^^xsd:token ;
     rdfs:comment "Tiles106 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles107 a fgwcore:Work,
@@ -1859,6 +1939,7 @@ ambientcga:Tiles107 a fgwcore:Work,
         "tiles"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles107"^^xsd:token ;
     rdfs:comment "Tiles107 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Tiles108 a fgwcore:Work,
@@ -1875,6 +1956,7 @@ ambientcga:Tiles108 a fgwcore:Work,
         "tiles"^^xsd:token,
         "white"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Tiles108"^^xsd:token ;
     rdfs:comment "Tiles108 - Tiles - PhotoTexturePBR"@en .
 
 ambientcga:Wood066 a fgwcore:Work,
@@ -1888,6 +1970,7 @@ ambientcga:Wood066 a fgwcore:Work,
     fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
     fgwcore:tag "Wood"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Wood066"^^xsd:token ;
     rdfs:comment "Wood066 - Wood - PhotoTexturePBR"@en .
 
 ambientcga:Wood067 a fgwcore:Work,
@@ -1901,6 +1984,7 @@ ambientcga:Wood067 a fgwcore:Work,
     fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
     fgwcore:tag "Wood"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Wood067"^^xsd:token ;
     rdfs:comment "Wood067 - Wood - PhotoTexturePBR"@en .
 
 ambientcga:Wood068 a fgwcore:Work,
@@ -1914,6 +1998,7 @@ ambientcga:Wood068 a fgwcore:Work,
     fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
     fgwcore:tag "Wood"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Wood068"^^xsd:token ;
     rdfs:comment "Wood068 - Wood - PhotoTexturePBR"@en .
 
 ambientcga:Wood069 a fgwcore:Work,
@@ -1927,6 +2012,7 @@ ambientcga:Wood069 a fgwcore:Work,
     fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
     fgwcore:tag "Wood"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:Wood069"^^xsd:token ;
     rdfs:comment "Wood069 - Wood - PhotoTexturePBR"@en .
 
 ambientcga:WoodFloor042 a fgwcore:Work,
@@ -1945,6 +2031,7 @@ ambientcga:WoodFloor042 a fgwcore:Work,
         "Wood"^^xsd:token,
         "Wooden"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:WoodFloor042"^^xsd:token ;
     rdfs:comment "WoodFloor042 - WoodFloor - PhotoTexturePBR"@en .
 
 ambientcga:WoodFloor043 a fgwcore:Work,
@@ -1963,6 +2050,7 @@ ambientcga:WoodFloor043 a fgwcore:Work,
         "Wood"^^xsd:token,
         "Wooden"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:WoodFloor043"^^xsd:token ;
     rdfs:comment "WoodFloor043 - WoodFloor - PhotoTexturePBR"@en .
 
 ambientcga:WoodFloor044 a fgwcore:Work,
@@ -1981,6 +2069,7 @@ ambientcga:WoodFloor044 a fgwcore:Work,
         "Wood"^^xsd:token,
         "Wooden"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:WoodFloor044"^^xsd:token ;
     rdfs:comment "WoodFloor044 - WoodFloor - PhotoTexturePBR"@en .
 
 ambientcga:BricksSubstance005 a fgwcore:Work,
@@ -1999,6 +2088,7 @@ ambientcga:BricksSubstance005 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:BricksSubstance005"^^xsd:token ;
     rdfs:comment "BricksSubstance005 - Bricks - SBSAR"@en .
 
 ambientcga:GrassSubstance001 a fgwcore:Work,
@@ -2017,6 +2107,7 @@ ambientcga:GrassSubstance001 a fgwcore:Work,
         "green"^^xsd:token,
         "ground"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:GrassSubstance001"^^xsd:token ;
     rdfs:comment "GrassSubstance001 - Grass - SBSAR"@en .
 
 ambientcga:TilesSubstance011 a fgwcore:Work,
@@ -2036,6 +2127,7 @@ ambientcga:TilesSubstance011 a fgwcore:Work,
         "sbsar"^^xsd:token,
         "tiles"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:TilesSubstance011"^^xsd:token ;
     rdfs:comment "TilesSubstance011 - Tiles - SBSAR"@en .
 
 ambientcga:TilesSubstance012 a fgwcore:Work,
@@ -2055,6 +2147,7 @@ ambientcga:TilesSubstance012 a fgwcore:Work,
         "tiles"^^xsd:token,
         "yellow"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:TilesSubstance012"^^xsd:token ;
     rdfs:comment "TilesSubstance012 - Tiles - SBSAR"@en .
 
 ambientcga:GroundSubstance002 a fgwcore:Work,
@@ -2073,6 +2166,7 @@ ambientcga:GroundSubstance002 a fgwcore:Work,
         "Sand"^^xsd:token,
         "Substance"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:GroundSubstance002"^^xsd:token ;
     rdfs:comment "GroundSubstance002 - Ground - SBSAR"@en .
 
 ambientcga:PaintedBricksSubstance001 a fgwcore:Work,
@@ -2092,6 +2186,7 @@ ambientcga:PaintedBricksSubstance001 a fgwcore:Work,
         "painted"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:PaintedBricksSubstance001"^^xsd:token ;
     rdfs:comment "PaintedBricksSubstance001 - PaintedBricks - SBSAR"@en .
 
 ambientcga:BricksSubstance004 a fgwcore:Work,
@@ -2109,6 +2204,7 @@ ambientcga:BricksSubstance004 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:BricksSubstance004"^^xsd:token ;
     rdfs:comment "BricksSubstance004 - Bricks - SBSAR"@en .
 
 ambientcga:BricksSubstance003 a fgwcore:Work,
@@ -2126,6 +2222,7 @@ ambientcga:BricksSubstance003 a fgwcore:Work,
         "stone"^^xsd:token,
         "wall"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:BricksSubstance003"^^xsd:token ;
     rdfs:comment "BricksSubstance003 - Bricks - SBSAR"@en .
 
 ambientcga:GravelSubstance002 a fgwcore:Work,
@@ -2145,6 +2242,7 @@ ambientcga:GravelSubstance002 a fgwcore:Work,
         "stone"^^xsd:token,
         "substance"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:GravelSubstance002"^^xsd:token ;
     rdfs:comment "GravelSubstance002 - Gravel - SBSAR"@en .
 
 ambientcga:MarbleSubstance003 a fgwcore:Work,
@@ -2159,6 +2257,7 @@ ambientcga:MarbleSubstance003 a fgwcore:Work,
         "marble"^^xsd:token,
         "sbsar"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:MarbleSubstance003"^^xsd:token ;
     rdfs:comment "MarbleSubstance003 - Marble - SBSAR"@en .
 
 ambientcga:TilesSubstance013 a fgwcore:Work,
@@ -2178,6 +2277,7 @@ ambientcga:TilesSubstance013 a fgwcore:Work,
         "sbsar"^^xsd:token,
         "tiles"^^xsd:token ;
     fgwcore:type fgwf:Texture ;
+    fgwcore:workId "ambientcg:TilesSubstance013"^^xsd:token ;
     rdfs:comment "TilesSubstance013 - Tiles - SBSAR"@en .
 
 fgwcore:Collection a owl:Class .
