@@ -863,6 +863,10 @@ However, license exceptions may allow some additional uses or remove some restri
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :license ;
                         owl:someValuesFrom :License
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :workId ;
+                        owl:someValuesFrom xsd:token
                       ] ;
       owl:disjointWith :WorkType ;
       owl:hasKey ( :workId
