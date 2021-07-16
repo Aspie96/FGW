@@ -13,21 +13,99 @@
     rdfs:comment "Public Domain materials for Physically Based Rendering."@en ;
     owl:imports <http://aspie96.github.io/FGW/fgw.owl> .
 
+ambientcgc:3DBread a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "3DBread"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:3DBread004,
+        ambientcga:3DBread005,
+        ambientcga:3DBread006,
+        ambientcga:3DBread007 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/3DBread"^^xsd:anyURI ;
+    rdfs:comment "3DBread"@en .
+
+ambientcgc:3DCookie a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "3DCookie"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:3DCookie001 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/3DCookie"^^xsd:anyURI ;
+    rdfs:comment "3DCookie"@en .
+
 ambientcgc:3DModel a fgwcore:Collection,
         owl:NamedIndividual ;
     rdfs:label "3DModel"@en ;
     fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:3DBread004,
+        ambientcga:3DBread005,
+        ambientcga:3DBread006,
+        ambientcga:3DBread007,
+        ambientcga:3DCookie001,
+        ambientcga:3DPastry001,
+        ambientcga:3DPastry002 ;
     fgwcore:foundIn :index.php ;
     fgwcore:location "http://ambientcg.com/c/3DModel"^^xsd:anyURI ;
     rdfs:comment "3DModel"@en .
+
+ambientcgc:3DPastry a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "3DPastry"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:3DPastry001,
+        ambientcga:3DPastry002 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/3DPastry"^^xsd:anyURI ;
+    rdfs:comment "3DPastry"@en .
 
 ambientcgc:AtlasPBR a fgwcore:Collection,
         owl:NamedIndividual ;
     rdfs:label "AtlasPBR"@en ;
     fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:LeafSet022 ;
     fgwcore:foundIn :index.php ;
     fgwcore:location "http://ambientcg.com/c/AtlasPBR"^^xsd:anyURI ;
     rdfs:comment "AtlasPBR"@en .
+
+ambientcgc:Bricks a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Bricks054,
+        ambientcga:Bricks055,
+        ambientcga:Bricks056,
+        ambientcga:Bricks057,
+        ambientcga:Bricks058,
+        ambientcga:Bricks059,
+        ambientcga:Bricks060,
+        ambientcga:Bricks061,
+        ambientcga:Bricks062,
+        ambientcga:Bricks063,
+        ambientcga:Bricks064,
+        ambientcga:Bricks065,
+        ambientcga:Bricks066,
+        ambientcga:Bricks067,
+        ambientcga:Bricks068,
+        ambientcga:Bricks069,
+        ambientcga:Bricks070,
+        ambientcga:Bricks071,
+        ambientcga:BricksSubstance003,
+        ambientcga:BricksSubstance004,
+        ambientcga:BricksSubstance005 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Bricks"^^xsd:anyURI ;
+    rdfs:comment "Bricks"@en .
+
+ambientcgc:Concrete a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Concrete035,
+        ambientcga:Concrete036 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Concrete"^^xsd:anyURI ;
+    rdfs:comment "Concrete"@en .
 
 ambientcgc:DecalPBR a fgwcore:Collection,
         owl:NamedIndividual ;
@@ -37,11 +115,195 @@ ambientcgc:DecalPBR a fgwcore:Collection,
     fgwcore:location "http://ambientcg.com/c/DecalPBR"^^xsd:anyURI ;
     rdfs:comment "DecalPBR"@en .
 
+ambientcgc:Grass a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Grass"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Grass003,
+        ambientcga:Grass004,
+        ambientcga:GrassSubstance001 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Grass"^^xsd:anyURI ;
+    rdfs:comment "Grass"@en .
+
+ambientcgc:Gravel a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Gravel022,
+        ambientcga:Gravel023,
+        ambientcga:Gravel024,
+        ambientcga:Gravel025,
+        ambientcga:Gravel026,
+        ambientcga:Gravel027,
+        ambientcga:Gravel028,
+        ambientcga:Gravel029,
+        ambientcga:GravelSubstance002 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Gravel"^^xsd:anyURI ;
+    rdfs:comment "Gravel"@en .
+
+ambientcgc:Ground a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Ground"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Ground043,
+        ambientcga:Ground044,
+        ambientcga:Ground045,
+        ambientcga:Ground046,
+        ambientcga:Ground047,
+        ambientcga:Ground048,
+        ambientcga:GroundSubstance002 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Ground"^^xsd:anyURI ;
+    rdfs:comment "Ground"@en .
+
+ambientcgc:LeafSet a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "LeafSet"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:LeafSet022 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/LeafSet"^^xsd:anyURI ;
+    rdfs:comment "LeafSet"@en .
+
+ambientcgc:Marble a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Marble"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Marble016,
+        ambientcga:Marble017,
+        ambientcga:Marble018,
+        ambientcga:Marble019,
+        ambientcga:Marble020,
+        ambientcga:Marble021,
+        ambientcga:Marble022,
+        ambientcga:Marble023,
+        ambientcga:Marble024,
+        ambientcga:Marble025,
+        ambientcga:MarbleSubstance003 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Marble"^^xsd:anyURI ;
+    rdfs:comment "Marble"@en .
+
+ambientcgc:PaintedBricks a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedBricks"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:PaintedBricks001,
+        ambientcga:PaintedBricks002,
+        ambientcga:PaintedBricks003,
+        ambientcga:PaintedBricks004,
+        ambientcga:PaintedBricks005,
+        ambientcga:PaintedBricksSubstance001 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/PaintedBricks"^^xsd:anyURI ;
+    rdfs:comment "PaintedBricks"@en .
+
+ambientcgc:PaintedPlaster a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedPlaster"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:PaintedPlaster017,
+        ambientcga:PaintedPlaster018 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/PaintedPlaster"^^xsd:anyURI ;
+    rdfs:comment "PaintedPlaster"@en .
+
+ambientcgc:Paper a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Paper"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Paper004 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Paper"^^xsd:anyURI ;
+    rdfs:comment "Paper"@en .
+
 ambientcgc:PhotoTexturePBR a fgwcore:Collection,
         owl:NamedIndividual ;
     rdfs:label "PhotoTexturePBR"@en ;
     fgwcore:author :legal.php ;
-    fgwcore:collectsWork ambientcga:Wood068 ;
+    fgwcore:collectsWork ambientcga:Bricks054,
+        ambientcga:Bricks055,
+        ambientcga:Bricks056,
+        ambientcga:Bricks057,
+        ambientcga:Bricks058,
+        ambientcga:Bricks059,
+        ambientcga:Bricks060,
+        ambientcga:Bricks061,
+        ambientcga:Bricks062,
+        ambientcga:Bricks063,
+        ambientcga:Bricks064,
+        ambientcga:Bricks065,
+        ambientcga:Bricks066,
+        ambientcga:Bricks067,
+        ambientcga:Bricks068,
+        ambientcga:Bricks069,
+        ambientcga:Bricks070,
+        ambientcga:Bricks071,
+        ambientcga:Concrete035,
+        ambientcga:Concrete036,
+        ambientcga:Grass003,
+        ambientcga:Grass004,
+        ambientcga:Gravel022,
+        ambientcga:Gravel023,
+        ambientcga:Gravel024,
+        ambientcga:Gravel025,
+        ambientcga:Gravel026,
+        ambientcga:Gravel027,
+        ambientcga:Gravel028,
+        ambientcga:Gravel029,
+        ambientcga:Ground043,
+        ambientcga:Ground044,
+        ambientcga:Ground045,
+        ambientcga:Ground046,
+        ambientcga:Ground047,
+        ambientcga:Ground048,
+        ambientcga:Marble016,
+        ambientcga:Marble017,
+        ambientcga:Marble018,
+        ambientcga:Marble019,
+        ambientcga:Marble020,
+        ambientcga:Marble021,
+        ambientcga:Marble022,
+        ambientcga:Marble023,
+        ambientcga:Marble024,
+        ambientcga:Marble025,
+        ambientcga:PaintedBricks001,
+        ambientcga:PaintedBricks002,
+        ambientcga:PaintedBricks003,
+        ambientcga:PaintedBricks004,
+        ambientcga:PaintedBricks005,
+        ambientcga:PaintedPlaster017,
+        ambientcga:PaintedPlaster018,
+        ambientcga:Paper004,
+        ambientcga:Rock041,
+        ambientcga:Tiles090,
+        ambientcga:Tiles091,
+        ambientcga:Tiles092,
+        ambientcga:Tiles093,
+        ambientcga:Tiles094,
+        ambientcga:Tiles095,
+        ambientcga:Tiles096,
+        ambientcga:Tiles097,
+        ambientcga:Tiles098,
+        ambientcga:Tiles099,
+        ambientcga:Tiles100,
+        ambientcga:Tiles101,
+        ambientcga:Tiles102,
+        ambientcga:Tiles103,
+        ambientcga:Tiles104,
+        ambientcga:Tiles105,
+        ambientcga:Tiles106,
+        ambientcga:Tiles107,
+        ambientcga:Tiles108,
+        ambientcga:Wood066,
+        ambientcga:Wood067,
+        ambientcga:Wood068,
+        ambientcga:Wood069,
+        ambientcga:WoodFloor042,
+        ambientcga:WoodFloor043,
+        ambientcga:WoodFloor044 ;
     fgwcore:foundIn :index.php ;
     fgwcore:location "http://ambientcg.com/c/PhotoTexturePBR"^^xsd:anyURI ;
     rdfs:comment "PhotoTexturePBR"@en .
@@ -54,10 +316,30 @@ ambientcgc:PhotoTexturePlain a fgwcore:Collection,
     fgwcore:location "http://ambientcg.com/c/PhotoTexturePlain"^^xsd:anyURI ;
     rdfs:comment "PhotoTexturePlain"@en .
 
+ambientcgc:Rock a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Rock"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Rock041 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Rock"^^xsd:anyURI ;
+    rdfs:comment "Rock"@en .
+
 ambientcgc:SBSAR a fgwcore:Collection,
         owl:NamedIndividual ;
     rdfs:label "SBSAR"@en ;
     fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:BricksSubstance003,
+        ambientcga:BricksSubstance004,
+        ambientcga:BricksSubstance005,
+        ambientcga:GrassSubstance001,
+        ambientcga:GravelSubstance002,
+        ambientcga:GroundSubstance002,
+        ambientcga:MarbleSubstance003,
+        ambientcga:PaintedBricksSubstance001,
+        ambientcga:TilesSubstance011,
+        ambientcga:TilesSubstance012,
+        ambientcga:TilesSubstance013 ;
     fgwcore:foundIn :index.php ;
     fgwcore:location "http://ambientcg.com/c/SBSAR"^^xsd:anyURI ;
     rdfs:comment "SBSAR"@en .
@@ -70,14 +352,58 @@ ambientcgc:Terrain a fgwcore:Collection,
     fgwcore:location "http://ambientcg.com/c/Terrain"^^xsd:anyURI ;
     rdfs:comment "Terrain"@en .
 
+ambientcgc:Tiles a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:Tiles090,
+        ambientcga:Tiles091,
+        ambientcga:Tiles092,
+        ambientcga:Tiles093,
+        ambientcga:Tiles094,
+        ambientcga:Tiles095,
+        ambientcga:Tiles096,
+        ambientcga:Tiles097,
+        ambientcga:Tiles098,
+        ambientcga:Tiles099,
+        ambientcga:Tiles100,
+        ambientcga:Tiles101,
+        ambientcga:Tiles102,
+        ambientcga:Tiles103,
+        ambientcga:Tiles104,
+        ambientcga:Tiles105,
+        ambientcga:Tiles106,
+        ambientcga:Tiles107,
+        ambientcga:Tiles108,
+        ambientcga:TilesSubstance011,
+        ambientcga:TilesSubstance012,
+        ambientcga:TilesSubstance013 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/Tiles"^^xsd:anyURI ;
+    rdfs:comment "Tiles"@en .
+
 ambientcgc:Wood a fgwcore:Collection,
         owl:NamedIndividual ;
     rdfs:label "Wood"@en ;
     fgwcore:author :legal.php ;
-    fgwcore:collectsWork ambientcga:Wood068 ;
+    fgwcore:collectsWork ambientcga:Wood066,
+        ambientcga:Wood067,
+        ambientcga:Wood068,
+        ambientcga:Wood069 ;
     fgwcore:foundIn :index.php ;
     fgwcore:location "http://ambientcg.com/c/Wood"^^xsd:anyURI ;
     rdfs:comment "Wood"@en .
+
+ambientcgc:WoodFloor a fgwcore:Collection,
+        owl:NamedIndividual ;
+    rdfs:label "WoodFloor"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:collectsWork ambientcga:WoodFloor042,
+        ambientcga:WoodFloor043,
+        ambientcga:WoodFloor044 ;
+    fgwcore:foundIn :index.php ;
+    fgwcore:location "http://ambientcg.com/c/WoodFloor"^^xsd:anyURI ;
+    rdfs:comment "WoodFloor"@en .
 
 fgwcore:author a owl:ObjectProperty .
 
@@ -105,7 +431,1475 @@ fgwcore:Platform a owl:Class .
 
 fgwcore:PlatformUser a owl:Class .
 
-fgwcore:Work a owl:Class .
+ambientcga:3DBread004 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "3DBread004"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:OBJ ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bread"^^xsd:token ;
+    fgwcore:type fgwf:3DModel ;
+    rdfs:comment "3DBread004 - 3DBread - 3DModel"@en .
+
+ambientcga:3DBread005 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "3DBread005"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:OBJ ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bagel"^^xsd:token,
+        "Bread"^^xsd:token ;
+    fgwcore:type fgwf:3DModel ;
+    rdfs:comment "3DBread005 - 3DBread - 3DModel"@en .
+
+ambientcga:3DBread006 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "3DBread006"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:OBJ ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bread"^^xsd:token ;
+    fgwcore:type fgwf:3DModel ;
+    rdfs:comment "3DBread006 - 3DBread - 3DModel"@en .
+
+ambientcga:3DBread007 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "3DBread007"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:OBJ ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bread"^^xsd:token ;
+    fgwcore:type fgwf:3DModel ;
+    rdfs:comment "3DBread007 - 3DBread - 3DModel"@en .
+
+ambientcga:3DCookie001 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "3DCookie001"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:OBJ ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Cookie"^^xsd:token ;
+    fgwcore:type fgwf:3DModel ;
+    rdfs:comment "3DCookie001 - 3DCookie - 3DModel"@en .
+
+ambientcga:3DPastry001 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "3DPastry001"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:OBJ ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Croissant"^^xsd:token,
+        "Pastry"^^xsd:token ;
+    fgwcore:type fgwf:3DModel ;
+    rdfs:comment "3DPastry001 - 3DPastry - 3DModel"@en .
+
+ambientcga:3DPastry002 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "3DPastry002"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:OBJ ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Pastry"^^xsd:token,
+        "Sausage"^^xsd:token,
+        "roll"^^xsd:token ;
+    fgwcore:type fgwf:3DModel ;
+    rdfs:comment "3DPastry002 - 3DPastry - 3DModel"@en .
+
+ambientcga:Bricks054 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks054"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Bricks"^^xsd:token,
+        "Wall"^^xsd:token,
+        "brown"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks054 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks055 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks055"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Bricks"^^xsd:token,
+        "Wall"^^xsd:token,
+        "brown"^^xsd:token,
+        "grey"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks055 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks056 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks056"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Bricks"^^xsd:token,
+        "Wall"^^xsd:token,
+        "black"^^xsd:token,
+        "grey"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks056 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks057 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks057"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Bricks"^^xsd:token,
+        "Wall"^^xsd:token,
+        "brown"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks057 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks058 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks058"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Bricks"^^xsd:token,
+        "Wall"^^xsd:token,
+        "black"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks058 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks059 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks059"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Bricks"^^xsd:token,
+        "Wall"^^xsd:token,
+        "red"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks059 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks060 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks060"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Bricks"^^xsd:token,
+        "Wall"^^xsd:token,
+        "White"^^xsd:token,
+        "bright"^^xsd:token,
+        "light"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks060 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks061 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks061"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bricks"^^xsd:token,
+        "brick"^^xsd:token,
+        "grey"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks061 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks062 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks062"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Bricks"^^xsd:token,
+        "grunge"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks062 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks063 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks063"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance004 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks063 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks064 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks064"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance004 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks064 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks065 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks065"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance004 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks065 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks066 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks066"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance004 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks066 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks067 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks067"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance004 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks067 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks068 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks068"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance004 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks068 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks069 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks069"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance004 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks069 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks070 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks070"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance005 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bricks"^^xsd:token,
+        "brick"^^xsd:token,
+        "orange"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks070 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Bricks071 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Bricks071"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance005 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bricks"^^xsd:token,
+        "brick"^^xsd:token,
+        "orange"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Bricks071 - Bricks - PhotoTexturePBR"@en .
+
+ambientcga:Concrete035 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete035"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "concrete"^^xsd:token,
+        "dark"^^xsd:token,
+        "grey"^^xsd:token,
+        "old"^^xsd:token,
+        "plaster"^^xsd:token,
+        "rough"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Concrete035 - Concrete - PhotoTexturePBR"@en .
+
+ambientcga:Concrete036 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete036"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "concrete"^^xsd:token,
+        "dark"^^xsd:token,
+        "grey"^^xsd:token,
+        "old"^^xsd:token,
+        "plaster"^^xsd:token,
+        "smooth"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Concrete036 - Concrete - PhotoTexturePBR"@en .
+
+ambientcga:Grass003 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Grass003"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GrassSubstance001 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "grass"^^xsd:token,
+        "green"^^xsd:token,
+        "ground"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Grass003 - Grass - PhotoTexturePBR"@en .
+
+ambientcga:Grass004 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Grass004"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GrassSubstance001 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "grass"^^xsd:token,
+        "green"^^xsd:token,
+        "ground"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Grass004 - Grass - PhotoTexturePBR"@en .
+
+ambientcga:Gravel022 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel022"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "grey"^^xsd:token,
+        "ground"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "stone"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Gravel022 - Gravel - PhotoTexturePBR"@en .
+
+ambientcga:Gravel023 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel023"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "bright"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "ground"^^xsd:token,
+        "light"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "stone"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Gravel023 - Gravel - PhotoTexturePBR"@en .
+
+ambientcga:Gravel024 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel024"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "black"^^xsd:token,
+        "dark"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "grey"^^xsd:token,
+        "ground"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "stone"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Gravel024 - Gravel - PhotoTexturePBR"@en .
+
+ambientcga:Gravel025 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel025"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "ground"^^xsd:token,
+        "orange"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "red"^^xsd:token,
+        "stone"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Gravel025 - Gravel - PhotoTexturePBR"@en .
+
+ambientcga:Gravel026 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel026"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "grey"^^xsd:token,
+        "ground"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "spotted"^^xsd:token,
+        "stone"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Gravel026 - Gravel - PhotoTexturePBR"@en .
+
+ambientcga:Gravel027 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel027"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "ground"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "stone"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Gravel027 - Gravel - PhotoTexturePBR"@en .
+
+ambientcga:Gravel028 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel028"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "ground"^^xsd:token,
+        "large"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "smooth"^^xsd:token,
+        "stone"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Gravel028 - Gravel - PhotoTexturePBR"@en .
+
+ambientcga:Gravel029 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Gravel029"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "Mossy"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "ground"^^xsd:token,
+        "grunge"^^xsd:token,
+        "moss"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "stone"^^xsd:token,
+        "wet"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Gravel029 - Gravel - PhotoTexturePBR"@en .
+
+ambientcga:Ground043 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Ground043"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GroundSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirt"^^xsd:token,
+        "Dirty"^^xsd:token,
+        "Ground"^^xsd:token,
+        "Sand"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Ground043 - Ground - PhotoTexturePBR"@en .
+
+ambientcga:Ground044 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Ground044"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GroundSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirt"^^xsd:token,
+        "Dirty"^^xsd:token,
+        "Ground"^^xsd:token,
+        "Sand"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Ground044 - Ground - PhotoTexturePBR"@en .
+
+ambientcga:Ground045 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Ground045"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GroundSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirt"^^xsd:token,
+        "Dirty"^^xsd:token,
+        "Ground"^^xsd:token,
+        "Sand"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Ground045 - Ground - PhotoTexturePBR"@en .
+
+ambientcga:Ground046 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Ground046"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GroundSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirt"^^xsd:token,
+        "Dirty"^^xsd:token,
+        "Ground"^^xsd:token,
+        "Sand"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Ground046 - Ground - PhotoTexturePBR"@en .
+
+ambientcga:Ground047 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Ground047"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GroundSubstance002 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirt"^^xsd:token,
+        "Dirty"^^xsd:token,
+        "Ground"^^xsd:token,
+        "Sand"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Ground047 - Ground - PhotoTexturePBR"@en .
+
+ambientcga:Ground048 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Ground048"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "brown"^^xsd:token,
+        "dirt"^^xsd:token,
+        "ground"^^xsd:token,
+        "soil"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Ground048 - Ground - PhotoTexturePBR"@en .
+
+ambientcga:LeafSet022 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "LeafSet022"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Set"^^xsd:token,
+        "green"^^xsd:token,
+        "leaf"^^xsd:token,
+        "leaves"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "LeafSet022 - LeafSet - AtlasPBR"@en .
+
+ambientcga:Marble016 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble016"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "black"^^xsd:token,
+        "marble"^^xsd:token,
+        "reflective"^^xsd:token,
+        "shiny"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble016 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble017 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble017"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "black"^^xsd:token,
+        "marble"^^xsd:token,
+        "reflective"^^xsd:token,
+        "rough"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble017 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble018 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble018"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "beige"^^xsd:token,
+        "bright"^^xsd:token,
+        "marble"^^xsd:token,
+        "rough"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble018 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble019 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble019"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "bright"^^xsd:token,
+        "light"^^xsd:token,
+        "marble"^^xsd:token,
+        "rough"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble019 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble020 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble020"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "beige"^^xsd:token,
+        "marble"^^xsd:token,
+        "reflective"^^xsd:token,
+        "shiny"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble020 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble021 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble021"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "bright"^^xsd:token,
+        "marble"^^xsd:token,
+        "reflective"^^xsd:token,
+        "shiny"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble021 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble022 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble022"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "brown"^^xsd:token,
+        "marble"^^xsd:token,
+        "reflective"^^xsd:token,
+        "shiny"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble022 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble023 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble023"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "black"^^xsd:token,
+        "blue"^^xsd:token,
+        "clean"^^xsd:token,
+        "dark"^^xsd:token,
+        "marble"^^xsd:token,
+        "reflective"^^xsd:token,
+        "shiny"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble023 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble024 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble024"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "brown"^^xsd:token,
+        "clean"^^xsd:token,
+        "grey"^^xsd:token,
+        "marble"^^xsd:token,
+        "reflective"^^xsd:token,
+        "shiny"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble024 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:Marble025 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Marble025"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:MarbleSubstance003 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "marble"^^xsd:token,
+        "rough"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Marble025 - Marble - PhotoTexturePBR"@en .
+
+ambientcga:PaintedBricks001 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedBricks001"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:PaintedBricksSubstance001 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "blue"^^xsd:token,
+        "brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "PaintedBricks001 - PaintedBricks - PhotoTexturePBR"@en .
+
+ambientcga:PaintedBricks002 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedBricks002"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:PaintedBricksSubstance001 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "brick"^^xsd:token,
+        "bricks"^^xsd:token,
+        "damaged"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "scratched"^^xsd:token,
+        "wall"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "PaintedBricks002 - PaintedBricks - PhotoTexturePBR"@en .
+
+ambientcga:PaintedBricks003 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedBricks003"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:PaintedBricksSubstance001 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bricks"^^xsd:token,
+        "Painted"^^xsd:token,
+        "brick"^^xsd:token,
+        "clean"^^xsd:token,
+        "green"^^xsd:token,
+        "light"^^xsd:token,
+        "smooth"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "PaintedBricks003 - PaintedBricks - PhotoTexturePBR"@en .
+
+ambientcga:PaintedBricks004 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedBricks004"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:PaintedBricksSubstance001 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bricks"^^xsd:token,
+        "Painted"^^xsd:token,
+        "paint"^^xsd:token,
+        "smooth"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "PaintedBricks004 - PaintedBricks - PhotoTexturePBR"@en .
+
+ambientcga:PaintedBricks005 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedBricks005"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:PaintedBricksSubstance001 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bricks"^^xsd:token,
+        "Painted"^^xsd:token,
+        "black"^^xsd:token,
+        "damaged"^^xsd:token,
+        "paint"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "PaintedBricks005 - PaintedBricks - PhotoTexturePBR"@en .
+
+ambientcga:PaintedPlaster017 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedPlaster017"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Painted"^^xsd:token,
+        "paint"^^xsd:token,
+        "plaster"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "PaintedPlaster017 - PaintedPlaster - PhotoTexturePBR"@en .
+
+ambientcga:PaintedPlaster018 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedPlaster018"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "damaged"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "plaster"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "PaintedPlaster018 - PaintedPlaster - PhotoTexturePBR"@en .
+
+ambientcga:Paper004 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Paper004"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "brown"^^xsd:token,
+        "package"^^xsd:token,
+        "packing"^^xsd:token,
+        "paper"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Paper004 - Paper - PhotoTexturePBR"@en .
+
+ambientcga:Rock041 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Rock041"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "black"^^xsd:token,
+        "rock"^^xsd:token,
+        "smooth"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Rock041 - Rock - PhotoTexturePBR"@en .
+
+ambientcga:Tiles090 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles090"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance011 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "black"^^xsd:token,
+        "dark"^^xsd:token,
+        "old"^^xsd:token,
+        "random"^^xsd:token,
+        "tiles"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles090 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles091 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles091"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance011 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "black"^^xsd:token,
+        "dark"^^xsd:token,
+        "old"^^xsd:token,
+        "random"^^xsd:token,
+        "tiles"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles091 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles092 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles092"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance011 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "black"^^xsd:token,
+        "dark"^^xsd:token,
+        "old"^^xsd:token,
+        "random"^^xsd:token,
+        "tiles"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles092 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles093 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles093"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance011 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "black"^^xsd:token,
+        "dark"^^xsd:token,
+        "old"^^xsd:token,
+        "random"^^xsd:token,
+        "tiles"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles093 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles094 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles094"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance012 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "Tiled"^^xsd:token,
+        "brown"^^xsd:token,
+        "dirt"^^xsd:token,
+        "square"^^xsd:token,
+        "tiles"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles094 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles095 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles095"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance012 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "Tiled"^^xsd:token,
+        "brown"^^xsd:token,
+        "dirt"^^xsd:token,
+        "tiles"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles095 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles096 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles096"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance012 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "Tiled"^^xsd:token,
+        "broken"^^xsd:token,
+        "brown"^^xsd:token,
+        "dirt"^^xsd:token,
+        "tiles"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles096 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles097 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles097"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance012 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "Tiled"^^xsd:token,
+        "brown"^^xsd:token,
+        "dirt"^^xsd:token,
+        "tiles"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles097 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles098 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles098"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Pavement"^^xsd:token,
+        "Tiled"^^xsd:token,
+        "medival"^^xsd:token,
+        "paving"^^xsd:token,
+        "tiles"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles098 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles099 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles099"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "Tiles"^^xsd:token,
+        "clean"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "pattern"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles099 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles100 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles100"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "Tiles"^^xsd:token,
+        "clean"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "pattern"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles100 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles101 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles101"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "Tiles"^^xsd:token,
+        "clean"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "pattern"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles101 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles102 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles102"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "Tiles"^^xsd:token,
+        "clean"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "pattern"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles102 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles103 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles103"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "Tiles"^^xsd:token,
+        "clean"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "pattern"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles103 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles104 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles104"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "Tiles"^^xsd:token,
+        "clean"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "pattern"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles104 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles105 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles105"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "tiles"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles105 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles106 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles106"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "black"^^xsd:token,
+        "tiles"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles106 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles107 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles107"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "tiles"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles107 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Tiles108 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Tiles108"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:TilesSubstance013 ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Tiled"^^xsd:token,
+        "tiles"^^xsd:token,
+        "white"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Tiles108 - Tiles - PhotoTexturePBR"@en .
+
+ambientcga:Wood066 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Wood066"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Wood"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Wood066 - Wood - PhotoTexturePBR"@en .
+
+ambientcga:Wood067 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Wood067"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Wood"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Wood067 - Wood - PhotoTexturePBR"@en .
 
 ambientcga:Wood068 a fgwcore:Work,
         owl:NamedIndividual ;
@@ -120,6 +1914,270 @@ ambientcga:Wood068 a fgwcore:Work,
     fgwcore:type fgwf:Texture ;
     rdfs:comment "Wood068 - Wood - PhotoTexturePBR"@en .
 
+ambientcga:Wood069 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "Wood069"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Wood"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "Wood069 - Wood - PhotoTexturePBR"@en .
+
+ambientcga:WoodFloor042 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "WoodFloor042"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Floor"^^xsd:token,
+        "Flooring"^^xsd:token,
+        "Parquet"^^xsd:token,
+        "Planks"^^xsd:token,
+        "Wood"^^xsd:token,
+        "Wooden"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "WoodFloor042 - WoodFloor - PhotoTexturePBR"@en .
+
+ambientcga:WoodFloor043 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "WoodFloor043"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Floor"^^xsd:token,
+        "Flooring"^^xsd:token,
+        "Parquet"^^xsd:token,
+        "Planks"^^xsd:token,
+        "Wood"^^xsd:token,
+        "Wooden"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "WoodFloor043 - WoodFloor - PhotoTexturePBR"@en .
+
+ambientcga:WoodFloor044 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "WoodFloor044"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:Image-JPEG,
+        fgwf:Image-PNG ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Floor"^^xsd:token,
+        "Flooring"^^xsd:token,
+        "Parquet"^^xsd:token,
+        "Planks"^^xsd:token,
+        "Wood"^^xsd:token,
+        "Wooden"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "WoodFloor044 - WoodFloor - PhotoTexturePBR"@en .
+
+ambientcga:BricksSubstance005 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "BricksSubstance005"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bricks"^^xsd:token,
+        "Substance"^^xsd:token,
+        "brick"^^xsd:token,
+        "orange"^^xsd:token,
+        "sbsar"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "BricksSubstance005 - Bricks - SBSAR"@en .
+
+ambientcga:GrassSubstance001 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "GrassSubstance001"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:Foliage001,
+        ambientcga:Foliage006,
+        ambientcga:LeafSet020 ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Substance"^^xsd:token,
+        "grass"^^xsd:token,
+        "green"^^xsd:token,
+        "ground"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "GrassSubstance001 - Grass - SBSAR"@en .
+
+ambientcga:TilesSubstance011 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "TilesSubstance011"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Substance"^^xsd:token,
+        "Tiled"^^xsd:token,
+        "black"^^xsd:token,
+        "dark"^^xsd:token,
+        "old"^^xsd:token,
+        "random"^^xsd:token,
+        "sbsar"^^xsd:token,
+        "tiles"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "TilesSubstance011 - Tiles - SBSAR"@en .
+
+ambientcga:TilesSubstance012 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "TilesSubstance012"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "Substance"^^xsd:token,
+        "Tiled"^^xsd:token,
+        "brown"^^xsd:token,
+        "dirt"^^xsd:token,
+        "sbsar"^^xsd:token,
+        "tiles"^^xsd:token,
+        "yellow"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "TilesSubstance012 - Tiles - SBSAR"@en .
+
+ambientcga:GroundSubstance002 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "GroundSubstance002"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:GravelSubstance001,
+        ambientcga:MossSubstance001 ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirt"^^xsd:token,
+        "Dirty"^^xsd:token,
+        "Ground"^^xsd:token,
+        "Sand"^^xsd:token,
+        "Substance"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "GroundSubstance002 - Ground - SBSAR"@en .
+
+ambientcga:PaintedBricksSubstance001 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "PaintedBricksSubstance001"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:BricksSubstance002,
+        ambientcga:PaintSubstance001 ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Substance"^^xsd:token,
+        "bricks"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "PaintedBricksSubstance001 - PaintedBricks - SBSAR"@en .
+
+ambientcga:BricksSubstance004 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "BricksSubstance004"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Brick"^^xsd:token,
+        "Substance"^^xsd:token,
+        "bricks"^^xsd:token,
+        "sbsar"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "BricksSubstance004 - Bricks - SBSAR"@en .
+
+ambientcga:BricksSubstance003 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "BricksSubstance003"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Bricks"^^xsd:token,
+        "Substance"^^xsd:token,
+        "brick"^^xsd:token,
+        "sbsar"^^xsd:token,
+        "stone"^^xsd:token,
+        "wall"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "BricksSubstance003 - Bricks - SBSAR"@en .
+
+ambientcga:GravelSubstance002 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "GravelSubstance002"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Dirty"^^xsd:token,
+        "dirt"^^xsd:token,
+        "gravel"^^xsd:token,
+        "ground"^^xsd:token,
+        "pebbles"^^xsd:token,
+        "sbsar"^^xsd:token,
+        "stone"^^xsd:token,
+        "substance"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "GravelSubstance002 - Gravel - SBSAR"@en .
+
+ambientcga:MarbleSubstance003 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "MarbleSubstance003"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Substance"^^xsd:token,
+        "marble"^^xsd:token,
+        "sbsar"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "MarbleSubstance003 - Marble - SBSAR"@en .
+
+ambientcga:TilesSubstance013 a fgwcore:Work,
+        owl:NamedIndividual ;
+    rdfs:label "TilesSubstance013"@en ;
+    fgwcore:author :legal.php ;
+    fgwcore:derivedFrom ambientcga:ConcreteSubstance004 ;
+    fgwcore:format fgwf:GravelSubstance002 ;
+    fgwcore:license fgwl:CC0-1.0 ;
+    fgwcore:location "http://ambientcg.com/a/Terrain"^^xsd:anyURI ;
+    fgwcore:notice "Contains assets from ambientCG.com, licensed under CC0 1.0 Universal."@en ;
+    fgwcore:tag "Substance"^^xsd:token,
+        "Tiled"^^xsd:token,
+        "paint"^^xsd:token,
+        "painted"^^xsd:token,
+        "pattern"^^xsd:token,
+        "sbsar"^^xsd:token,
+        "tiles"^^xsd:token ;
+    fgwcore:type fgwf:Texture ;
+    rdfs:comment "TilesSubstance013 - Tiles - SBSAR"@en .
+
 fgwcore:Collection a owl:Class .
 
 :index.php a fgwcore:Platform,
@@ -127,6 +2185,8 @@ fgwcore:Collection a owl:Class .
     rdfs:label "ambientCG"@en ;
     fgwcore:location "http://ambientcg.com/"^^xsd:anyURI ;
     rdfs:comment "Public Domain materials for Physically Based Rendering."@en .
+
+fgwcore:Work a owl:Class .
 
 :legal.php a fgwcore:PlatformUser,
         owl:NamedIndividual ;
