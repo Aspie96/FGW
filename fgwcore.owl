@@ -460,6 +460,16 @@ spdx:WithExceptionOperator rdf:type owl:Class ;
                            rdfs:subClassOf :LicenseWithExceptions .
 
 
+###  http://www.fgw.net/core#ActiveAuthor
+:ActiveAuthor rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :author ;
+                                    owl:minQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :Work
+                                  ] ;
+              rdfs:subClassOf :PlatformUser .
+
+
 ###  http://www.fgw.net/core#Agent
 :Agent rdf:type owl:Class ;
        owl:equivalentClass foaf:Agent ;
@@ -633,22 +643,6 @@ This means the user has to comply with the terms of all licenses in the set."""@
                              :WorkType ;
             rdfs:comment "Represents a type of file and its encoding."@en ;
             rdfs:label "File format"@en .
-
-
-###  http://www.fgw.net/core#LargeCollection
-:LargeCollection rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( :Collection
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :collectsWork ;
-                                                              owl:minQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
-                                                              owl:onClass :Work
-                                                            ]
-                                                          ) ;
-                                       rdf:type owl:Class
-                                     ] ;
-                 rdfs:subClassOf :Collection ;
-                 rdfs:comment "Represents a large collection with at least 10 elements."@en ;
-                 rdfs:label "large collection"@en .
 
 
 ###  http://www.fgw.net/core#License
