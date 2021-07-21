@@ -639,11 +639,11 @@ This means the user has to comply with the terms of all licenses in the set."""@
 
 ###  http://www.fgw.net/core#License
 :License rdf:type owl:Class ;
-         owl:equivalentClass [ rdf:type owl:Restriction ;
-                               owl:onProperty :licenseLevel ;
-                               owl:someValuesFrom :LicenseLevel
-                             ] ;
-         rdfs:subClassOf foaf:Document ;
+         rdfs:subClassOf foaf:Document ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :licenseLevel ;
+                           owl:someValuesFrom :LicenseLevel
+                         ] ;
          owl:disjointWith :LicenseException ,
                           :LicenseLevel ,
                           :Platform ,
@@ -766,6 +766,21 @@ However, license exceptions may allow some additional uses or remove some restri
                        rdfs:label "License with exceptions"@en .
 
 
+###  http://www.fgw.net/core#NonEmptyCollection
+:NonEmptyCollection rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :Collection
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :collectsWork ;
+                                                                 owl:someValuesFrom :Work
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :Collection ;
+                    rdfs:comment "Collection which contains some works."@en ;
+                    rdfs:label "Non empty collection"@en .
+
+
 ###  http://www.fgw.net/core#NonTrivialCollection
 :NonTrivialCollection rdf:type owl:Class ;
                       owl:equivalentClass [ owl:intersectionOf ( :Collection
@@ -777,7 +792,9 @@ However, license exceptions may allow some additional uses or remove some restri
                                                                ) ;
                                             rdf:type owl:Class
                                           ] ;
-                      rdfs:subClassOf :Collection .
+                      rdfs:subClassOf :Collection ;
+                      rdfs:comment "Collection with at least 2 works."@en ;
+                      rdfs:label "Non trivial collection"@en .
 
 
 ###  http://www.fgw.net/core#PermissiveLicense
