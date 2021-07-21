@@ -774,6 +774,20 @@ However, license exceptions may allow some additional uses or remove some restri
                        rdfs:label "License with exceptions"@en .
 
 
+###  http://www.fgw.net/core#NonTrivialCollection
+:NonTrivialCollection rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :Collection
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :collectsWork ;
+                                                                   owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                   owl:onClass :Work
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf :Collection .
+
+
 ###  http://www.fgw.net/core#PermissiveLicense
 :PermissiveLicense rdf:type owl:Class ;
                    owl:equivalentClass [ owl:intersectionOf ( :License
