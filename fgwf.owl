@@ -53,6 +53,14 @@ rdfs:label rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.fgw.net/core#type
+fgwcore:type rdf:type owl:ObjectProperty .
+
+
+#################################################################
 #    Data properties
 #################################################################
 
@@ -81,8 +89,35 @@ dcmitype:Sound rdf:type owl:Class .
 fgwcore:FileFormat rdf:type owl:Class .
 
 
+###  http://www.fgw.net/core#Work
+fgwcore:Work rdf:type owl:Class .
+
+
 ###  http://www.fgw.net/core#WorkType
 fgwcore:WorkType rdf:type owl:Class .
+
+
+###  http://www.fgw.net/formats#Sound
+:Sound rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( fgwcore:Work
+                                                  [ rdf:type owl:Class ;
+                                                    owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty fgwcore:type ;
+                                                                    owl:hasValue :Music
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty fgwcore:type ;
+                                                                    owl:hasValue :SoundEffect
+                                                                  ]
+                                                                )
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+       rdfs:subClassOf dcmitype:Sound ,
+                       fgwcore:Work ;
+       rdfs:comment "Represents an audio (music or sound effect)"@en ;
+       rdfs:label "Sound"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Image
