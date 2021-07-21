@@ -161,7 +161,8 @@ spdx:member rdf:type owl:ObjectProperty .
 
 
 ###  http://www.fgw.net/core#exceptionAppliedTo
-:exceptionAppliedTo rdf:type owl:ObjectProperty ;
+:exceptionAppliedTo rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain :LicenseWithExceptions ;
                     rdfs:range :LicenseDocument ;
                     rdfs:comment "exception applied to"@en ;
@@ -344,6 +345,7 @@ dcterms:source rdf:type owl:DatatypeProperty .
 ###  http://www.fgw.net/core#licenseList
 :licenseList rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf :location ;
+             rdf:type owl:FunctionalProperty ;
              rdfs:domain :LicenseValidator ;
              rdfs:range xsd:anyURI ;
              rdfs:comment "Specifies a URL to a list of the approved licenses."@en .
@@ -458,16 +460,6 @@ spdx:SimpleLicensingInfo rdf:type owl:Class ;
 ###  http://spdx.org/rdf/terms#WithExceptionOperator
 spdx:WithExceptionOperator rdf:type owl:Class ;
                            rdfs:subClassOf :LicenseWithExceptions .
-
-
-###  http://www.fgw.net/core#ActiveAuthor
-:ActiveAuthor rdf:type owl:Class ;
-              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                    owl:onProperty :author ;
-                                    owl:minQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
-                                    owl:onClass :Work
-                                  ] ;
-              rdfs:subClassOf :PlatformUser .
 
 
 ###  http://www.fgw.net/core#Agent
@@ -671,15 +663,15 @@ A license is a potentially complex entity. It may correspond to a simple license
 
 ###  http://www.fgw.net/core#LicenseAuthor
 :LicenseAuthor rdf:type owl:Class ;
-               owl:equivalentClass [ rdf:type owl:Restriction ;
-                                     owl:onProperty :hasCreatedLicense ;
-                                     owl:someValuesFrom [ rdf:type owl:Class ;
-                                                          owl:unionOf ( :License
-                                                                        :LicenseException
-                                                                      )
-                                                        ]
-                                   ] ;
-               rdfs:subClassOf :Agent ;
+               rdfs:subClassOf :Agent ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasCreatedLicense ;
+                                 owl:someValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :License
+                                                                    :LicenseException
+                                                                  )
+                                                    ]
+                               ] ;
                rdfs:comment "Represents an agent which has written one or more licenses or license exceptions."@en ;
                rdfs:label "License author"@en .
 
@@ -719,11 +711,11 @@ An exception can always be ignored by the user of any work using that license, s
 
 ###  http://www.fgw.net/core#LicenseValidator
 :LicenseValidator rdf:type owl:Class ;
-                  owl:equivalentClass [ rdf:type owl:Restriction ;
-                                        owl:onProperty :approves ;
-                                        owl:someValuesFrom :LicenseDocument
-                                      ] ;
                   rdfs:subClassOf :Agent ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :approves ;
+                                    owl:someValuesFrom :LicenseDocument
+                                  ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty :licenseList ;
                                     owl:someValuesFrom xsd:anyURI
