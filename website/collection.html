@@ -1,12 +1,15 @@
 <html>
 	<head>
 		<script>
+			// SPARQL endpoint URL
 			var server = "http://localhost:8890/sparql";
+			// Submits a query and calls the callback afterwards.
 			function sparqlQuery(query, callback) {
 				fetch(server + "?query=" + encodeURIComponent(query) + "&format=" + encodeURIComponent("json"))
 					.then(response => response.json())
 					.then(callback);
 			}
+			// Escapes HTML entities in a string.
 			function escapeHtml(str) {
 				return str
 					.replace(/&/g, "&amp;")
@@ -15,20 +18,18 @@
 					.replace(/"/g, "&quot;")
 					.replace(/'/g, "&#039;");
 			}
-			var platforms = [
-				[ "<http://localhost:8890/DAV/ambientcg>", "<http://localhost:8890/DAV/ambientcg/inferr>" ],
-				[ "<http://localhost:8890/DAV/oga>", "<http://localhost:8890/DAV/oga/inferr>" ],
-				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
-			]
 			function describe() {
+				// Check the collection to describe.
 				var collection = new URLSearchParams(window.location.search).get("collection");
 				var description = document.getElementById("description");
+				// Select information about the collection.
 				var query = "SELECT ?label ?comment ?work ?work_label ";
 				query += "WHERE {";
 				query += "<" + collection + "> rdfs:label ?label.";
 				query += "<" + collection + "> rdfs:comment ?comment.";
-				query += "<" + collection + "> fgwcore:collectsWork ?work.";
-				query += "?work rdfs:label ?work_label.";
+				// The collectioncould be empty.
+				query += "OPTIONAL {<" + collection + "> fgwcore:collectsWork ?work.";
+				query += "?work rdfs:label ?work_label.}";
 				query += "}";
 				console.log(query);
 				sparqlQuery(query, function(data) {
@@ -41,12 +42,16 @@
 					}
 					var works = [];
 					var worksLabels = [];
-					for(result in data.results.bindings) {
-						if(!works.includes(data.results.bindings[result].work.value)) {
-							works.push(data.results.bindings[result].work.value);
-							worksLabels.push(data.results.bindings[result].work_label.value);
+					// Collect works of the colection.
+					if(data.results.bindings[0].work) {
+						for(result in data.results.bindings) {
+							if(!works.includes(data.results.bindings[result].work.value)) {
+								works.push(data.results.bindings[result].work.value);
+								worksLabels.push(data.results.bindings[result].work_label.value);
+							}
 						}
 					}
+					// Display the collected data.
 					html += "<h1>" + escapeHtml(data.results.bindings[0].label.value) + "</h1>";
 					html += "<dl>";
 					html += "<dt>Title</dt>";

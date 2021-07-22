@@ -1,12 +1,15 @@
 <html>
 	<head>
 		<script>
+			// SPARQL endpoint URL
 			var server = "http://localhost:8890/sparql";
+			// Submits a query and calls the callback afterwards.
 			function sparqlQuery(query, callback) {
 				fetch(server + "?query=" + encodeURIComponent(query) + "&format=" + encodeURIComponent("json"))
 					.then(response => response.json())
 					.then(callback);
 			}
+			// Escapes HTML entities in a string.
 			function escapeHtml(str) {
 				return str
 					.replace(/&/g, "&amp;")
@@ -15,12 +18,8 @@
 					.replace(/"/g, "&quot;")
 					.replace(/'/g, "&#039;");
 			}
-			var platforms = [
-				[ "<http://localhost:8890/DAV/ambientcg>", "<http://localhost:8890/DAV/ambientcg/inferr>" ],
-				[ "<http://localhost:8890/DAV/oga>", "<http://localhost:8890/DAV/oga/inferr>" ],
-				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
-			]
 			function describe() {
+				// Select all licenses and, for each license, its label in English and the entities which approved it.
 				var query = "SELECT DISTINCT ?licenseDocument ?licenseDocument_label ?approver ?approver_label WHERE {"
 				query += "?licenseDocument rdf:type fgwcore:LicenseDocument.";
 				query += "?licenseDocument rdfs:label ?licenseDocument_label.";
@@ -30,8 +29,11 @@
 				console.log(query);
 				sparqlQuery(query, function(data) {
 					var div = document.getElementById("div");
+					// The key is the label of a license. For each element there is the array of approved that approved the license.
 					var licenseDocuments = {};
+					// List of label of approvers.
 					var approvers = [];
+					// The data is in a different format in the input. This generates the desired format.
 					for(result in data.results.bindings) {
 						if(!(data.results.bindings[result].licenseDocument_label.value in licenseDocuments)) {
 							licenseDocuments[data.results.bindings[result].licenseDocument_label.value] = [];
@@ -43,6 +45,7 @@
 							licenseDocuments[data.results.bindings[result].licenseDocument_label.value].push(data.results.bindings[result].approver_label.value);
 						}
 					}
+					// Display the collected data.
 					var html = "<table border=\"1\">";
 					html += "<tr>";
 					html += "<th>License</th>";

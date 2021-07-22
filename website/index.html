@@ -1,12 +1,15 @@
 <html>
 	<head>
 		<script>
+			// SPARQL endpoint URL
 			var server = "http://localhost:8890/sparql";
+			// Submits a query and calls the callback afterwards.
 			function sparqlQuery(query, callback) {
 				fetch(server + "?query=" + encodeURIComponent(query) + "&format=" + encodeURIComponent("json"))
 					.then(response => response.json())
 					.then(callback);
 			}
+			// Escapes HTML entities in a string.
 			function escapeHtml(str) {
 				return str
 					.replace(/&/g, "&amp;")
@@ -15,14 +18,18 @@
 					.replace(/"/g, "&quot;")
 					.replace(/'/g, "&#039;");
 			}
+			// For each platform all corresponding graphs.
 			var platforms = [
 				[ "<http://localhost:8890/DAV/ambientcg>", "<http://localhost:8890/DAV/ambientcg/inferr>" ],
 				[ "<http://localhost:8890/DAV/oga>", "<http://localhost:8890/DAV/oga/inferr>" ],
 				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
 			]
 			function search(form) {
+				// The element in which to write the results.
 				var results = document.getElementById("results");
+				// We are selecting the desired works and using the FGW ontology..
 				var query = "SELECT DISTINCT ?work ?label ?comment ?author ?author_label ?notice ?type_label FROM <http://localhost:8890/DAV/fgw> FROM <http://localhost:8890/DAV/fgw/inferr>";
+				// From the graphs corresponding to the requested platforms.
 				if(form.ambientCG.checked) {
 					query += " FROM " + platforms[0].join(" FROM ");
 				}
@@ -32,20 +39,26 @@
 				if(form.gameIcons.checked) {
 					query += " FROM " + platforms[2].join(" FROM ");
 				}
+				// Simply read the properties for each work...
 				query += "WHERE {";
 				query += "?work rdf:type fgwcore:Work.";
 				query += "?work rdfs:label ?label.";
 				query += "?work rdfs:comment ?comment.";
 				query += "?work fgwcore:author ?author.";
 				query += "?author rdfs:label ?author_label.";
+				// If a tag has been set, only works with that tag are desired.
 				if(form.tag.value) {
 					query += "?work fgwcore:tag \"" + form.tag.value + "\"^^<http://www.w3.org/2001/XMLSchema#token>.";
 				}
+				// The notice may not be present.
 				query += "OPTIONAL {?work fgwcore:notice ?notice.}";
+				// A work may not have a type.
 				query += "OPTIONAL {?work fgwcore:type ?type. ?type rdfs:label ?type_label.}";
+				// If a type has been specified only works with that type are selected.
 				if(form.types.value != "all") {
 					query += "?work fgwcore:type " + form.types.value + ".";
 				}
+				// Check what kind of licensing restriction are checked.
 				var licensesArray = [];
 				if(form.permissive.checked) {
 					licensesArray.push("fgwcore:permissive");
@@ -56,7 +69,9 @@
 				if(form.weakCopyleft.checked) {
 					licensesArray.push("fgwcore:weakCopyleft");
 				}
+				// If all licensing levels are ok then no restriction is added.
 				if(licensesArray.length != 3) {
+					// Creating the restriction for licensing kind.
 					if(licensesArray.length == 1) {
 						query += "?work fgwcore:workLicenseLevel " + licensesArray[0] + ".";
 					} else {
@@ -66,6 +81,7 @@
 				query += "}";
 				console.log(query);
 				sparqlQuery(query, function(data) {
+					// The data has been obtained, so results are listed.
 					var html = "";
 					for(result in data.results.bindings) {
 						var link = "<a href=\"work.html?work=" + encodeURIComponent(data.results.bindings[result].work.value) + "\">" + data.results.bindings[result].label.value + "</a>";
@@ -88,6 +104,7 @@
 				return false;
 			}
 			function onLoad() {
+				// As long as the document loads, I load the tags to suggest to the user.
 				var tags = document.getElementById("tags");
 				var query = "SELECT DISTINCT ?tag";
 				for(platform in platforms) {

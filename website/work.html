@@ -1,12 +1,15 @@
 <html>
 	<head>
 		<script>
+			// SPARQL endpoint URL
 			var server = "http://localhost:8890/sparql";
+			// Submits a query and calls the callback afterwards.
 			function sparqlQuery(query, callback) {
 				fetch(server + "?query=" + encodeURIComponent(query) + "&format=" + encodeURIComponent("json"))
 					.then(response => response.json())
 					.then(callback);
 			}
+			// Escapes HTML entities in a string.
 			function escapeHtml(str) {
 				return str
 					.replace(/&/g, "&amp;")
@@ -15,14 +18,11 @@
 					.replace(/"/g, "&quot;")
 					.replace(/'/g, "&#039;");
 			}
-			var platforms = [
-				[ "<http://localhost:8890/DAV/ambientcg>", "<http://localhost:8890/DAV/ambientcg/inferr>" ],
-				[ "<http://localhost:8890/DAV/oga>", "<http://localhost:8890/DAV/oga/inferr>" ],
-				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
-			]
 			function describe() {
+				// Check which work has to be described.
 				var work = new URLSearchParams(window.location.search).get("work");
 				var description = document.getElementById("description");
+				// Select all the needed data of the work.
 				var query = "SELECT DISTINCT ?label ?comment ?author ?author_label ?license ?licenseLevel ?location ?notice ?type ?type_label ?tag ?platform ?platform_label ?collection ?collection_label ";
 				query += "WHERE {";
 				query += "<" + work + "> rdfs:label ?label.";
@@ -41,28 +41,36 @@
 				query += "OPTIONAL {<" + work + "> fgwcore:foundIn ?collection. ?collection rdf:type fgwcore:Collection. ?collection rdfs:label ?collection_label.}";
 				query += "OPTIONAL {<" + work + "> fgwcore:tag ?tag.}";
 				query += "}";
+				// To prefer license IDs that have a label.
 				query += "ORDER BY DESC (?license_label)";
 				console.log(query);
 				sparqlQuery(query, function(data) {
+					// Now describe the license.
 					var query = "DESCRIBE <" + data.results.bindings[0].license.value + "> ?memberLicense";
 					query += " WHERE {<" + data.results.bindings[0].license.value + "> fgwcore:memberLicense ?memberLicense.}";
 					console.log(query);
 					sparqlQuery(query, function(licensedescription) {
+						// Labels of the objects obtained from the description. The key is the IRI.
 						var labels = {};
+						// Data about the license
 						var license = {};
 						for(result in licensedescription.results.bindings) {
 							if(licensedescription.results.bindings[result].p.value == "http://www.w3.org/2000/01/rdf-schema#label" && licensedescription.results.bindings[result].o.lang == "en") {
 								labels[licensedescription.results.bindings[result].s.value] = licensedescription.results.bindings[result].o.value;
 							}
+							// Data of which the license is the subject.
 							if(licensedescription.results.bindings[result].s.value == data.results.bindings[0].license.value) {
 								if(licensedescription.results.bindings[result].p.value == "http://www.w3.org/1999/02/22-rdf-syntax-ns#type") {
 									if(licensedescription.results.bindings[result].o.value == "http://www.fgw.net/core#LicenseDocument") {
+										// The license is simple and has no members.
 										license.type = "simple";
 									} else if(licensedescription.results.bindings[result].o.value == "http://www.fgw.net/core#DisjunctiveLicenseSet") {
+										// The license is a disjunctive set.
 										license.type = "disjunctive";
 									}
 								}
 								if(licensedescription.results.bindings[result].p.value == "http://www.fgw.net/core#memberLicense") {
+									// This is a member of the license.
 									if(!license.members) {
 										license.members = [];
 									}
@@ -71,12 +79,14 @@
 							}
 						}
 						var html = "";
+						// Collect the tags of the work.
 						var tags = [];
 						for(result in data.results.bindings) {
 							if(data.results.bindings[result].tag && !tags.includes(data.results.bindings[result].tag.value)) {
 								tags.push(data.results.bindings[result].tag.value);
 							}
 						}
+						// Collects the collections of the work.
 						var collections = [];
 						var collectionsl = [];
 						for(result in data.results.bindings) {
@@ -85,6 +95,7 @@
 								collectionsl.push(data.results.bindings[result].collection_label.value);
 							}
 						}
+						// Show the collected data.
 						html += "<h1>" + escapeHtml(data.results.bindings[0].label.value) + "</h1>";
 						html += "<dl>";
 						html += "<dt>Title</dt>";
@@ -108,11 +119,13 @@
 							html += "<dd>" + escapeHtml(data.results.bindings[0].workType.value) + "</dd>";
 						}
 						console.log(license);
+						// Displaying the license
 						if(license.type == "simple") {
 							html += "<dt>License</dt>";
 							console.log(labels);
 							html += "<dd>" + escapeHtml(labels[data.results.bindings[0].license.value]) + "</dd>";
 						} else {
+							// If the license is complex display all of its parts.
 							html += "<dt>License</dt>";
 							html += "<dd>";
 							for(licenseMember in license.members) {
@@ -124,6 +137,7 @@
 							html = html.substr(0, html.length - 21);
 							html += "</dd>";
 						}
+						// Display the license level is known.
 						if(data.results.bindings[0].licenseLevel) {
 							html += "<dt>License level</dt>";
 							if(data.results.bindings[0].licenseLevel.value == "http://www.fgw.net/core#permissive") {
@@ -136,6 +150,7 @@
 								html += "<dd>Weak copyleft</dd>";
 							}
 						}
+						// Link to the work location or to its IRI if location is absent.
 						if(data.results.bindings[0].location) {
 							html += "<dt>Location</dt>";
 							html += "<dd><a href=\"" + escapeHtml(data.results.bindings[0].location.value) + "\">Link</a></dd>";
