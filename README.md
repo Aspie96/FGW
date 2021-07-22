@@ -18,7 +18,7 @@ Inferences are available at:
 In addition to the above, data relative to specific platform is also provided:
 - http://aspie96.github.io/FGW/platforms/ambientcg.owl and inferences: http://aspie96.github.io/FGW/platforms/ambientcginferred.owl
 - http://aspie96.github.io/FGW/platforms/gamei.owl and inferred: http://aspie96.github.io/FGW/platforms/gameiinferrd.owl
-- http://aspie96.github.io/FGW/platforms/oga.owl and inferrences: http://aspie96.github.io/FGW/platforms/ogainferred.owl
+- http://aspie96.github.io/FGW/platforms/oga.owl and inferred: http://aspie96.github.io/FGW/platforms/ogainferred.owl
 
 Note that files of inferred axioms do not import anything, while the original file referring to each platform imports http://aspie96.github.io/FGW/fgw.owl.
 
