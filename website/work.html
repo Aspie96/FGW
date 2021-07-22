@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<script>
+			var server = "http://localhost:8890/sparql";
+			function sparqlQuery(query, callback) {
+				fetch(server + "?query=" + encodeURIComponent(query) + "&format=" + encodeURIComponent("json"))
+					.then(response => response.json())
+					.then(callback);
+			}
+			function escapeHtml(str) {
+				return str
+					.replace(/&/g, "&amp;")
+					.replace(/</g, "&lt;")
+					.replace(/>/g, "&gt;")
+					.replace(/"/g, "&quot;")
+					.replace(/'/g, "&#039;");
+			}
+			var platforms = [
+				[ "<http://localhost:8890/DAV/ambientcg>", "<http://localhost:8890/DAV/ambientcg/inferr>" ],
+				[ "<http://localhost:8890/DAV/oga>", "<http://localhost:8890/DAV/oga/inferr>" ],
+				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
+			]
+			function describe() {
+				var work = "http://ambientCG.com/a/3DApple001";
+				var description = document.getElementById("description");
+				var query = "DESCRIBE ";
+				query += "<" + work + "> ";
+				query += " ?workType ?c ";
+				query += " FROM <http://localhost:8890/DAV/fgw> FROM <http://localhost:8890/DAV/fgw/inferr>";
+				for(platform in platforms) {
+					query += " FROM";
+					query += platforms[platform].join(" FROM ");
+				}
+				query += " WHERE {<" + work + "> fgwcore:foundIn ?c.OPTIONAL {<" + work + "> fgwcore:type ?workType.}}";
+				console.log(query);
+				sparqlQuery(query, function(data) {
+					var html = "";
+					var objs = {};
+					var formats = ["http://www.fgw.net/core#format"]
+					for(result in data.results.bindings) {
+						if(!(data.results.bindings[result].s.value in objs)) {
+							objs[data.results.bindings[result].s.value] = {};
+						}
+						if(!(data.results.bindings[result].p.value in objs[data.results.bindings[result].s.value])) {
+							objs[data.results.bindings[result].s.value][data.results.bindings[result].p.value] = [];
+						}
+						objs[data.results.bindings[result].s.value][data.results.bindings[result].p.value].push(data.results.bindings[result].o.value);
+					}
+					html += "<h1>" + escapeHtml(objs[work]["http://www.w3.org/2000/01/rdf-schema#label"][0]) + "</h1>";
+					html += "<dl>";
+					html += "<dt>Title</dt>";
+					html += "<dd>" + escapeHtml(objs[work]["http://www.w3.org/2000/01/rdf-schema#label"][0]) + "</dd>";
+					html += "<dt>Description</dt>";
+					html += "<dd>" + escapeHtml(objs[work]["http://www.w3.org/2000/01/rdf-schema#comment"][0]).replace(/(?:\r\n|\r|\n)/g, "<br/>") + "</dd>";
+					var platform;
+					var collections = [];
+					var found = objs[work]["http://www.fgw.net/core#foundIn"];
+					for(f in found) {
+						if(objs[found[f]]["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"] == "http://www.fgw.net/core#Collection") {
+							collections.push(found[f]);
+						} else {
+							platform = found[f];
+						}
+					}
+					var tags = objs[work]["http://www.fgw.net/core#tag"];
+					if(tags) {
+						html += "<dt>Tags</dt>";
+						html += "<dd>";
+						html += escapeHtml(tags.join(", "));
+						html += "</dd>";
+					}
+					var notice = objs[work]["http://www.fgw.net/core#notice"][0];
+					if(notice) {
+						html += "<dt>Notice</dt>";
+						html += "<dd>" + escapeHtml(notice).replace(/(?:\r\n|\r|\n)/g, "<br/>") + "</dd>";
+					}
+					var workType = objs[work]["http://www.fgw.net/core#type"][0];
+					if(workType) {
+						html += "<dt>Work type</dt>";
+						html += "<dd>" + escapeHtml(objs[workType]["http://www.w3.org/2000/01/rdf-schema#label"][0]).replace(/(?:\r\n|\r|\n)/g, "<br/>") + "</dd>";
+					}
+					if(platform) {
+						html += "<dt>Platform</dt>";
+						html += "<dd>" + escapeHtml(objs[platform]["http://www.w3.org/2000/01/rdf-schema#label"][0]).replace(/(?:\r\n|\r|\n)/g, "<br/>") + "</dd>";
+					}
+					if(collections.length > 0) {
+						html += "<dt>Collections</dt>";
+						html += "<dd>";
+						html += "<ul>";
+						for(collection in collections) {
+							html += "<li>";
+							escapeHtml(objs[collections[collection]]["http://www.w3.org/2000/01/rdf-schema#label"][0]).replace(/(?:\r\n|\r|\n)/g)
+							html += "</li>";
+						}
+						html += "</ul>";
+						html += "</dd>";
+					}
+					html += "</dl>";
+					description.innerHTML = html;
+				});
+				return false;
+			}
+		</script>
+	</head>
+	<body onload="describe()">
+		<div id="description"></div>
+	</body>
+</html>

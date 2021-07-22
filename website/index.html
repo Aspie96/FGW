@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<script>
+			var server = "http://localhost:8890/sparql";
+			function sparqlQuery(query, callback) {
+				fetch(server + "?query=" + encodeURIComponent(query) + "&format=" + encodeURIComponent("json"))
+					.then(response => response.json())
+					.then(callback);
+			}
+			function escapeHtml(str) {
+				return str
+					.replace(/&/g, "&amp;")
+					.replace(/</g, "&lt;")
+					.replace(/>/g, "&gt;")
+					.replace(/"/g, "&quot;")
+					.replace(/'/g, "&#039;");
+			}
+			var platforms = [
+				[ "<http://localhost:8890/DAV/ambientcg>", "<http://localhost:8890/DAV/ambientcg/inferr>" ],
+				[ "<http://localhost:8890/DAV/oga>", "<http://localhost:8890/DAV/oga/inferr>" ],
+				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
+			]
+			function search(form) {
+				var results = document.getElementById("results");
+				var query = "SELECT DISTINCT ?work ?label ?comment ?author ?author_label ?location ?notice ?type_label FROM <http://localhost:8890/DAV/fgw> FROM <http://localhost:8890/DAV/fgw/inferr>";
+				if(form.ambientCG.checked) {
+					query += " FROM " + platforms[0].join(" FROM ");
+				}
+				if(form.oga.checked) {
+					query += " FROM " + platforms[1].join(" FROM ");
+				}
+				if(form.gameIcons.checked) {
+					query += " FROM " + platforms[2].join(" FROM ");
+				}
+				query += "where {";
+				query += "?work rdf:type fgwcore:Work.";
+				query += "?work rdfs:label ?label.";
+				query += "?work rdfs:comment ?comment.";
+				query += "?work fgwcore:author ?author.";
+				query += "?author rdfs:label ?author_label.";
+				if(form.tag.value) {
+					query += "?work fgwcore:tag \"" + form.tag.value + "\"^^<http://www.w3.org/2001/XMLSchema#token>.";
+				}
+				query += "OPTIONAL {?work fgwcore:location ?location.}";
+				query += "OPTIONAL {?work fgwcore:notice ?notice.}";
+				query += "OPTIONAL {?work fgwcore:type ?type. ?type rdfs:label ?type_label.}";
+				if(form.types.value != "all") {
+					query += "?work fgwcore:type " + form.types.value + ".";
+				}
+				var licensesArray = [];
+				if(form.permissive.checked) {
+					licensesArray.push("fgwcore:permissive");
+				}
+				if(form.strongCopyleft.checked) {
+					licensesArray.push("fgwcore:strongCopyleft");
+				}
+				if(form.weakCopyleft.checked) {
+					licensesArray.push("fgwcore:weakCopyleft");
+				}
+				if(licensesArray.length != 3) {
+					if(licensesArray.length == 1) {
+						query += "?work fgwcore:workLicenseLevel " + licensesArray[0] + ".";
+					} else {
+						query += "?work fgwcore:workLicenseLevel ?licenseLevel. FILTER (?licenseLevel IN (" + licensesArray.join(", ") + "))."
+					}
+				}
+				query += "}";
+				console.log(query);
+				sparqlQuery(query, function(data) {
+					var html = "";
+					for(result in data.results.bindings) {
+						var location;
+						if(data.results.bindings[result].location) {
+							location = data.results.bindings[result].location.value;
+						} else {
+							location = data.results.bindings[result].work.value;
+						}
+						var link = "<a href=\"" + location + "\">" + data.results.bindings[result].label.value + "</a>";
+						html += "<h2>";
+						html += link;
+						if(data.results.bindings[result].author) {
+							html += " by " + data.results.bindings[result].author_label.value;
+						}
+						html += "</h2>";
+						html += "<p>" + escapeHtml(data.results.bindings[result].comment.value).replace(/(?:\r\n|\r|\n)/g, "<br/>") + "</p>";
+						if(data.results.bindings[result].type_label) {
+							html += "<p><strong>Type:</strong> " + escapeHtml(data.results.bindings[result].type_label.value) + "</p>";
+						}
+						if(data.results.bindings[result].notice) {
+							html += "<p><strong>Notice:</strong> " + escapeHtml(data.results.bindings[result].notice.value).replace(/(?:\r\n|\r|\n)/g, "<br/>") + "</p>";
+						}
+					}
+					results.innerHTML = html;
+				});
+				return false;
+			}
+			function onLoad() {
+				var tags = document.getElementById("tags");
+				var query = "SELECT DISTINCT ?tag";
+				for(platform in platforms) {
+					query += " FROM";
+					query += platforms[platform].join(" FROM ");
+				}
+				query += " WHERE {?work fgwcore:tag ?tag.}";
+				console.log(query);
+				sparqlQuery(query, function(data) {
+					html = "";
+					for(result in data.results.bindings) {
+						html += "<option value=\"" + data.results.bindings[result].tag.value + "\" />";
+					}
+					tags.innerHTML = html;
+				});
+			}
+		</script>
+	</head>
+	<body onload="onLoad()">
+		<form onsubmit="return search(this)">
+			<fieldset>
+				<legend>Platforms:</legend>
+				<input type="checkbox" id="ambientCG" name="ambientCG" value="include" />
+				<label for="ambientCG">ambientCG</label>
+				<input type="checkbox" id="oga" name="ogs" value="include" />
+				<label for="oga">OpenGameArt.org</label>
+				<input type="checkbox" id="gameIcons" name="gameIcons" value="include" />
+				<label for="gameIcons">game-icons.net</label>
+			</fieldset>
+			<label for="tag">Tag:</label>
+			<input list="tags" name="tag" id="tag">
+			<datalist id="tags">
+			</datalist>
+			<label for="types">Work type:</label>
+			<select name="types" id="types" required>
+				<option selected value="all">All</option>
+				<option value="fgwf:2DArt">2D Art</option>
+				<option value="fgwf:3DModel">3D Model</option>
+				<option value="fgwf:ConceptArt">Concept art</option>
+				<option value="fgwf:Document">Document</option>
+				<option value="fgwf:Music">Music</option>
+				<option value="fgwf:SoundEffect">Sound effect</option>
+				<option value="fgwf:Texture">Texture</option>
+			</select>
+			<fieldset>
+				<legend>License level:</legend>
+				<input type="checkbox" id="permissive" name="permissive" value="fgwcore:permissive" />
+				<label for="permissive">Permissive</label>
+				<input type="checkbox" id="strongCopyleft" name="strongCopyleft" value="include" />
+				<label for="strongCopyleft">Strong copyleft</label>
+				<input type="checkbox" id="weakCopyleft" name="weakCoyleft" value="include" />
+				<label for="weakCopyleft">Weak copyleft</label>
+			</fieldset>
+			<button type="submit">Search</button>
+		</form>
+		<div id="results">
+		</div>
+	</body>
+</html>
