@@ -96,7 +96,9 @@ This is the T-box for the ontology and contains all classes, as well as individu
 
     <!-- http://purl.org/dc/terms/creator -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/maker"/>
+    </owl:ObjectProperty>
     
 
 
@@ -236,6 +238,7 @@ This is the T-box for the ontology and contains all classes, as well as individu
     <!-- http://www.fgw.net/core#exceptionAppliedTo -->
 
     <owl:ObjectProperty rdf:about="http://www.fgw.net/core#exceptionAppliedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.fgw.net/core#LicenseWithExceptions"/>
         <rdfs:range rdf:resource="http://www.fgw.net/core#LicenseDocument"/>
         <rdfs:comment xml:lang="en">exception applied to</rdfs:comment>
@@ -497,6 +500,7 @@ This is the T-box for the ontology and contains all classes, as well as individu
 
     <owl:DatatypeProperty rdf:about="http://www.fgw.net/core#licenseList">
         <rdfs:subPropertyOf rdf:resource="http://www.fgw.net/core#location"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.fgw.net/core#LicenseValidator"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment xml:lang="en">Specifies a URL to a list of the approved licenses.</rdfs:comment>
@@ -549,7 +553,7 @@ This is the T-box for the ontology and contains all classes, as well as individu
     <owl:DatatypeProperty rdf:about="http://www.fgw.net/core#notice">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.fgw.net/core#Work"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:comment xml:lang="en">Specifies a notice to be read in addition to the license.</rdfs:comment>
         <rdfs:label xml:lang="en">notice</rdfs:label>
     </owl:DatatypeProperty>
@@ -563,6 +567,18 @@ This is the T-box for the ontology and contains all classes, as well as individu
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Specifies a tag for the work.</rdfs:comment>
         <rdfs:label xml:lang="en">tag</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.fgw.net/core#workId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.fgw.net/core#workId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.fgw.net/core#Work"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment xml:lang="en">An ID for the work. It is the responsability of the platform to assign it and it must be unique worldwide.</rdfs:comment>
+        <rdfs:label xml:lang="en">work ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -727,52 +743,40 @@ This is the T-box for the ontology and contains all classes, as well as individu
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.fgw.net/core#StrongCopyleftLicense"/>
-                    <owl:Class>
-                        <owl:complementOf>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
-                                <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#StrongCopyleftLicense"/>
-                            </owl:Restriction>
-                        </owl:complementOf>
-                    </owl:Class>
+                    <rdf:Description rdf:about="http://www.fgw.net/core#PermissiveLicense"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
+                        <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#CopyleftLicense"/>
+                    </owl:Restriction>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Class>
-                <owl:complementOf>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.fgw.net/core#StrongCopyleftLicense"/>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.fgw.net/core#StrongCopyleftLicense"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
+                        <owl:allValuesFrom>
                             <owl:Class>
-                                <owl:complementOf>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#StrongCopyleftLicense"/>
-                                    </owl:Restriction>
-                                </owl:complementOf>
+                                <owl:complementOf rdf:resource="http://www.fgw.net/core#StrongCopyleftLicense"/>
                             </owl:Class>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:complementOf>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Class>
-                <owl:complementOf>
+                <owl:unionOf rdf:parseType="Collection">
                     <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Class>
-                                <owl:complementOf rdf:resource="http://www.fgw.net/core#PermissiveLicense"/>
-                            </owl:Class>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
-                                <owl:allValuesFrom rdf:resource="http://www.fgw.net/core#PermissiveLicense"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
+                        <owl:complementOf rdf:resource="http://www.fgw.net/core#StrongCopyleftLicense"/>
                     </owl:Class>
-                </owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
+                        <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#StrongCopyleftLicense"/>
+                    </owl:Restriction>
+                </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -782,9 +786,6 @@ This is the T-box for the ontology and contains all classes, as well as individu
                 <owl:onClass rdf:resource="http://www.fgw.net/core#License"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:hasKey rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.fgw.net/core#memberLicense"/>
-        </owl:hasKey>
         <rdfs:comment xml:lang="en">Represents a conjunction of multiple licenses.
 This means the user has to comply with the terms of all licenses in the set.</rdfs:comment>
         <rdfs:label xml:lang="en">Conjunctive license set</rdfs:label>
@@ -814,10 +815,36 @@ This means the user has to comply with the terms of all licenses in the set.</rd
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.fgw.net/core#CopyleftLicense"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
+                        <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#PermissiveLicense"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.fgw.net/core#PermissiveLicense"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
                         <owl:allValuesFrom rdf:resource="http://www.fgw.net/core#CopyleftLicense"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.fgw.net/core#StrongCopyleftLicense"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://www.fgw.net/core#StrongCopyleftLicense"/>
+                            </owl:Class>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:unionOf>
             </owl:Class>
@@ -836,47 +863,12 @@ This means the user has to comply with the terms of all licenses in the set.</rd
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:complementOf>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.fgw.net/core#PermissiveLicense"/>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
-                                <owl:allValuesFrom rdf:resource="http://www.fgw.net/core#CopyleftLicense"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:complementOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:complementOf>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Class>
-                                <owl:complementOf rdf:resource="http://www.fgw.net/core#StrongCopyleftLicense"/>
-                            </owl:Class>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
-                                <owl:allValuesFrom rdf:resource="http://www.fgw.net/core#StrongCopyleftLicense"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:complementOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.fgw.net/core#memberLicense"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.fgw.net/core#License"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:hasKey rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.fgw.net/core#memberLicense"/>
-        </owl:hasKey>
         <rdfs:comment xml:lang="en">Represents a set of licenses among which the user may chose. The user only has to comply with the terms of at least one license at their choice in the set and receives all permissions from all licenses they comply with.</rdfs:comment>
         <rdfs:label xml:lang="en">Disjunctive license set</rdfs:label>
     </owl:Class>
@@ -904,38 +896,16 @@ This means the user has to comply with the terms of all licenses in the set.</rd
     
 
 
-    <!-- http://www.fgw.net/core#LargeCollection -->
-
-    <owl:Class rdf:about="http://www.fgw.net/core#LargeCollection">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.fgw.net/core#Collection"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.fgw.net/core#collectsWork"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">10</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.fgw.net/core#Work"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#Collection"/>
-        <rdfs:comment xml:lang="en">Represents a large collection with at least 10 elements.</rdfs:comment>
-        <rdfs:label xml:lang="en">large collection</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.fgw.net/core#License -->
 
     <owl:Class rdf:about="http://www.fgw.net/core#License">
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.fgw.net/core#licenseLevel"/>
                 <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#LicenseLevel"/>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.fgw.net/core#LicenseException"/>
         <owl:disjointWith rdf:resource="http://www.fgw.net/core#LicenseLevel"/>
         <owl:disjointWith rdf:resource="http://www.fgw.net/core#Platform"/>
@@ -960,7 +930,8 @@ A license is a potentially complex entity. It may correspond to a simple license
     <!-- http://www.fgw.net/core#LicenseAuthor -->
 
     <owl:Class rdf:about="http://www.fgw.net/core#LicenseAuthor">
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#Agent"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.fgw.net/core#hasCreatedLicense"/>
                 <owl:someValuesFrom>
@@ -972,8 +943,7 @@ A license is a potentially complex entity. It may correspond to a simple license
                     </owl:Class>
                 </owl:someValuesFrom>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#Agent"/>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Represents an agent which has written one or more licenses or license exceptions.</rdfs:comment>
         <rdfs:label xml:lang="en">License author</rdfs:label>
     </owl:Class>
@@ -1028,13 +998,13 @@ An exception can always be ignored by the user of any work using that license, s
     <!-- http://www.fgw.net/core#LicenseValidator -->
 
     <owl:Class rdf:about="http://www.fgw.net/core#LicenseValidator">
-        <owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#Agent"/>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.fgw.net/core#approves"/>
                 <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#LicenseDocument"/>
             </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#Agent"/>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.fgw.net/core#licenseList"/>
@@ -1104,6 +1074,49 @@ When a license document is in the list it means that the agent certifies that th
 Any use in compliance with the license ignoring the exceptions is still allowed, as is ignoring any specific license exception or group of license exceptions.
 However, license exceptions may allow some additional uses or remove some restrictions.</rdfs:comment>
         <rdfs:label xml:lang="en">License with exceptions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.fgw.net/core#NonEmptyCollection -->
+
+    <owl:Class rdf:about="http://www.fgw.net/core#NonEmptyCollection">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.fgw.net/core#Collection"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.fgw.net/core#collectsWork"/>
+                        <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#Work"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#Collection"/>
+        <rdfs:comment xml:lang="en">Collection which contains some works.</rdfs:comment>
+        <rdfs:label xml:lang="en">Non empty collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.fgw.net/core#NonTrivialCollection -->
+
+    <owl:Class rdf:about="http://www.fgw.net/core#NonTrivialCollection">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.fgw.net/core#Collection"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.fgw.net/core#collectsWork"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.fgw.net/core#Work"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#Collection"/>
+        <rdfs:comment xml:lang="en">Collection with at least 2 works.</rdfs:comment>
+        <rdfs:label xml:lang="en">Non trivial collection</rdfs:label>
     </owl:Class>
     
 
@@ -1227,7 +1240,16 @@ However, license exceptions may allow some additional uses or remove some restri
                 <owl:someValuesFrom rdf:resource="http://www.fgw.net/core#License"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.fgw.net/core#workId"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.fgw.net/core#WorkType"/>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.fgw.net/core#workId"/>
+        </owl:hasKey>
         <rdfs:comment xml:lang="en">Represents a creative work with a license for use present on a platform.</rdfs:comment>
         <rdfs:label xml:lang="en">Work</rdfs:label>
     </owl:Class>

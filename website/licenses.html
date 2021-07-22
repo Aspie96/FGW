@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<script>
+			var server = "http://localhost:8890/sparql";
+			function sparqlQuery(query, callback) {
+				fetch(server + "?query=" + encodeURIComponent(query) + "&format=" + encodeURIComponent("json"))
+					.then(response => response.json())
+					.then(callback);
+			}
+			function escapeHtml(str) {
+				return str
+					.replace(/&/g, "&amp;")
+					.replace(/</g, "&lt;")
+					.replace(/>/g, "&gt;")
+					.replace(/"/g, "&quot;")
+					.replace(/'/g, "&#039;");
+			}
+			var platforms = [
+				[ "<http://localhost:8890/DAV/ambientcg>", "<http://localhost:8890/DAV/ambientcg/inferr>" ],
+				[ "<http://localhost:8890/DAV/oga>", "<http://localhost:8890/DAV/oga/inferr>" ],
+				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
+			]
+			function describe() {
+				var query = "SELECT DISTINCT ?licenseDocument ?licenseDocument_label ?approver ?approver_label WHERE {"
+				query += "?licenseDocument rdf:type fgwcore:LicenseDocument.";
+				query += "?licenseDocument rdfs:label ?licenseDocument_label.";
+				query += "FILTER langMatches(lang(?licenseDocument_label), \"EN\")";
+				query += "OPTIONAL {?licenseDocument fgwcore:approved ?approver. ?approver rdfs:label ?approver_label.}";
+				query += "} GROUP BY ?licenseDocument ?approver ORDER BY ?licenseDocument_label ?licenseDocument";
+				console.log(query);
+				sparqlQuery(query, function(data) {
+					var div = document.getElementById("div");
+					var licenseDocuments = {};
+					var approvers = [];
+					for(result in data.results.bindings) {
+						if(!(data.results.bindings[result].licenseDocument_label.value in licenseDocuments)) {
+							licenseDocuments[data.results.bindings[result].licenseDocument_label.value] = [];
+						}
+						if(data.results.bindings[result].approver) {
+							if(!approvers.includes(data.results.bindings[result].approver_label.value)) {
+								approvers.push(data.results.bindings[result].approver_label.value);
+							}
+							licenseDocuments[data.results.bindings[result].licenseDocument_label.value].push(data.results.bindings[result].approver_label.value);
+						}
+					}
+					var html = "<table border=\"1\">";
+					html += "<tr>";
+					html += "<th>License</th>";
+					for(approver in approvers) {
+						html += "<th>" + approvers[approver] + "</th>";
+					}
+					html += "</tr>";
+					for(licenseDocument in licenseDocuments) {
+						html += "<tr>";
+						html += "<td>";
+						html += licenseDocument;
+						html += "</td>";
+						for(approver in approvers) {
+							if(licenseDocuments[licenseDocument].includes(approvers[approver])) {
+								html += "<td>Approved</td>";
+							} else {
+								html += "<td>  </td>";
+							}
+						}
+						html += "</tr>";
+					}
+					html += "</table>";
+					div.innerHTML = html;
+				});
+				return false;
+			}
+		</script>
+	</head>
+	<body onload="describe()">
+		<div id="div"></div>
+	</body>
+</html>

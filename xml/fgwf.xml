@@ -79,6 +79,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.fgw.net/core#type -->
+
+    <owl:ObjectProperty rdf:about="http://www.fgw.net/core#type"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Data properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -130,9 +147,45 @@
     
 
 
+    <!-- http://www.fgw.net/core#Work -->
+
+    <owl:Class rdf:about="http://www.fgw.net/core#Work"/>
+    
+
+
     <!-- http://www.fgw.net/core#WorkType -->
 
     <owl:Class rdf:about="http://www.fgw.net/core#WorkType"/>
+    
+
+
+    <!-- http://www.fgw.net/formats#Sound -->
+
+    <owl:Class rdf:about="http://www.fgw.net/formats#Sound">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.fgw.net/core#Work"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.fgw.net/core#type"/>
+                                <owl:hasValue rdf:resource="http://www.fgw.net/formats#Music"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.fgw.net/core#type"/>
+                                <owl:hasValue rdf:resource="http://www.fgw.net/formats#SoundEffect"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/dc/dcmitype/Sound"/>
+        <rdfs:subClassOf rdf:resource="http://www.fgw.net/core#Work"/>
+        <rdfs:comment xml:lang="en">Represents an audio (music or sound effect)</rdfs:comment>
+        <rdfs:label xml:lang="en">Sound</rdfs:label>
+    </owl:Class>
     
 
 

@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<script>
+			var server = "http://localhost:8890/sparql";
+			function sparqlQuery(query, callback) {
+				fetch(server + "?query=" + encodeURIComponent(query) + "&format=" + encodeURIComponent("json"))
+					.then(response => response.json())
+					.then(callback);
+			}
+			function escapeHtml(str) {
+				return str
+					.replace(/&/g, "&amp;")
+					.replace(/</g, "&lt;")
+					.replace(/>/g, "&gt;")
+					.replace(/"/g, "&quot;")
+					.replace(/'/g, "&#039;");
+			}
+			var platforms = [
+				[ "<http://localhost:8890/DAV/ambientcg>", "<http://localhost:8890/DAV/ambientcg/inferr>" ],
+				[ "<http://localhost:8890/DAV/oga>", "<http://localhost:8890/DAV/oga/inferr>" ],
+				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
+			]
+			function describe() {
+				var collection = new URLSearchParams(window.location.search).get("collection");
+				var description = document.getElementById("description");
+				var query = "SELECT ?label ?comment ?work ?work_label ";
+				query += "WHERE {";
+				query += "<" + collection + "> rdfs:label ?label.";
+				query += "<" + collection + "> rdfs:comment ?comment.";
+				query += "<" + collection + "> fgwcore:collectsWork ?work.";
+				query += "?work rdfs:label ?work_label.";
+				query += "}";
+				console.log(query);
+				sparqlQuery(query, function(data) {
+					var html = "";
+					var tags = [];
+					for(result in data.results.bindings) {
+						if(data.results.bindings[result].tag && !tags.includes(data.results.bindings[result].tag.value)) {
+							tags.push(data.results.bindings[result].tag.value);
+						}
+					}
+					var works = [];
+					var worksLabels = [];
+					for(result in data.results.bindings) {
+						if(!works.includes(data.results.bindings[result].work.value)) {
+							works.push(data.results.bindings[result].work.value);
+							worksLabels.push(data.results.bindings[result].work_label.value);
+						}
+					}
+					html += "<h1>" + escapeHtml(data.results.bindings[0].label.value) + "</h1>";
+					html += "<dl>";
+					html += "<dt>Title</dt>";
+					html += "<dd>" + escapeHtml(data.results.bindings[0].label.value) + "</dd>";
+					html += "<dt>Description</dt>";
+					html += "<dd>" + escapeHtml(data.results.bindings[0].comment.value).replace(/(?:\r\n|\r|\n)/g, "<br/>") + "</dd>";
+					if(works.length > 0) {
+						html += "<dt>Works</dt>";
+						html += "<dd>";
+						html += "<ul>";
+						for(work in works) {
+							html += "<li>";
+							html += "<a href=\"work.html?work=" + encodeURIComponent(works[work]) + "\">";
+							html += escapeHtml(worksLabels[work]);
+							html += "</a>";
+							html += "</li>";
+						}
+						html += "</ul>";
+						html += "</dd>";
+					}
+					html += "</dl>";
+					description.innerHTML = html;
+				});
+				return false;
+			}
+		</script>
+	</head>
+	<body onload="describe()">
+		<div id="description"></div>
+	</body>
+</html>

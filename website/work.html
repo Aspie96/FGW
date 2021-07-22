@@ -21,11 +21,10 @@
 				[ "<http://localhost:8890/DAV/gamei>", "<http://localhost:8890/DAV/gamei/inferr>" ]
 			]
 			function describe() {
-				var work = "http://ambientCG.com/a/3DApple001";
+				var work = new URLSearchParams(window.location.search).get("work");
 				var description = document.getElementById("description");
-				var query = "SELECT DISTINCT ?label ?comment ?author ?author_label ?license ?location ?notice ?type ?type_label ?tag ?platform ?platform_label ?collection ?collection_label ";
+				var query = "SELECT DISTINCT ?label ?comment ?author ?author_label ?license ?licenseLevel ?location ?notice ?type ?type_label ?tag ?platform ?platform_label ?collection ?collection_label ";
 				query += "WHERE {";
-				query += "<" + work + "> rdf:type fgwcore:Work.";
 				query += "<" + work + "> rdfs:label ?label.";
 				query += "<" + work + "> rdfs:comment ?comment.";
 				query += "<" + work + "> fgwcore:author ?author.";
@@ -34,21 +33,25 @@
 				query += "?platform rdf:type fgwcore:Platform.";
 				query += "?platform rdfs:label ?platform_label.";
 				query += "<" + work + "> fgwcore:license ?license.";
+				query += "OPTIONAL {?license rdfs:label ?license_label.}";
+				query += "<" + work + "> fgwcore:workLicenseLevel ?licenseLevel.";
 				query += "OPTIONAL {<" + work + "> fgwcore:location ?location.}";
 				query += "OPTIONAL {<" + work + "> fgwcore:notice ?notice.}";
 				query += "OPTIONAL {<" + work + "> fgwcore:type ?type. ?type rdfs:label ?type_label.}";
 				query += "OPTIONAL {<" + work + "> fgwcore:foundIn ?collection. ?collection rdf:type fgwcore:Collection. ?collection rdfs:label ?collection_label.}";
 				query += "OPTIONAL {<" + work + "> fgwcore:tag ?tag.}";
 				query += "}";
+				query += "ORDER BY DESC (?license_label)";
 				console.log(query);
 				sparqlQuery(query, function(data) {
-					var query = "DESCRIBE <" + data.results.bindings[0].license.value + ">";
+					var query = "DESCRIBE <" + data.results.bindings[0].license.value + "> ?memberLicense";
+					query += " WHERE {<" + data.results.bindings[0].license.value + "> fgwcore:memberLicense ?memberLicense.}";
+					console.log(query);
 					sparqlQuery(query, function(licensedescription) {
 						var labels = {};
 						var license = {};
 						for(result in licensedescription.results.bindings) {
-							console.log(licensedescription.results.bindings[result].p.value);
-							if(licensedescription.results.bindings[result].p.value == "http://www.w3.org/2000/01/rdf-schema#label") {
+							if(licensedescription.results.bindings[result].p.value == "http://www.w3.org/2000/01/rdf-schema#label" && licensedescription.results.bindings[result].o.lang == "en") {
 								labels[licensedescription.results.bindings[result].s.value] = licensedescription.results.bindings[result].o.value;
 							}
 							if(licensedescription.results.bindings[result].s.value == data.results.bindings[0].license.value) {
@@ -88,6 +91,8 @@
 						html += "<dd>" + escapeHtml(data.results.bindings[0].label.value) + "</dd>";
 						html += "<dt>Description</dt>";
 						html += "<dd>" + escapeHtml(data.results.bindings[0].comment.value).replace(/(?:\r\n|\r|\n)/g, "<br/>") + "</dd>";
+						html += "<dt>Author</dt>";
+						html += "<dd>" + escapeHtml(data.results.bindings[0].author_label.value) + "</dd>";
 						if(tags.length > 0) {
 							html += "<dt>Tags</dt>";
 							html += "<dd>";
@@ -111,14 +116,32 @@
 							html += "<dt>License</dt>";
 							html += "<dd>";
 							for(licenseMember in license.members) {
-								html += license.members[licenseMember] + "<strong> or </strong>";
+								console.log(labels);
+								if(labels[license.members[licenseMember]]) {
+									html += labels[license.members[licenseMember]] + "<strong> or </strong>";
+								}
 							}
-							html += html.substr(0, -21);
+							html = html.substr(0, html.length - 21);
 							html += "</dd>";
 						}
 						if(data.results.bindings[0].licenseLevel) {
-							html += "<dt>License</dt>";
-							html += "<dd>" + escapeHtml(data.results.bindings[0].licenseLevel.value) + "</dd>";
+							html += "<dt>License level</dt>";
+							if(data.results.bindings[0].licenseLevel.value == "http://www.fgw.net/core#permissive") {
+								html += "<dd>Permissive</dd>";
+							}
+							if(data.results.bindings[0].licenseLevel.value == "http://www.fgw.net/core#strongCopyleft") {
+								html += "<dd>Strong copyleft</dd>";
+							}
+							if(data.results.bindings[0].licenseLevel.value == "http://www.fgw.net/core#weakCopyleft") {
+								html += "<dd>Weak copyleft</dd>";
+							}
+						}
+						if(data.results.bindings[0].location) {
+							html += "<dt>Location</dt>";
+							html += "<dd><a href=\"" + escapeHtml(data.results.bindings[0].location.value) + "\">Link</a></dd>";
+						} else {
+							html += "<dt>Location</dt>";
+							html += "<dd><a href=\"" + escapeHtml(work) + "\">Link</a></dd>";
 						}
 						html += "<dt>Platform</dt>";
 						html += "<dd>" + escapeHtml(data.results.bindings[0].platform_label.value) + "</dd>";
@@ -128,7 +151,7 @@
 							html += "<ul>";
 							for(collection in collections) {
 								html += "<li>";
-								html += escapeHtml(collectionsl[collection]);
+								html += "<a href=\"collection.html?collection=" + encodeURIComponent(collections[collection]) + "\">" + escapeHtml(collectionsl[collection]) + "</a>";
 								html += "</li>";
 							}
 							html += "</ul>";

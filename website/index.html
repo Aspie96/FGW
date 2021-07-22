@@ -22,7 +22,7 @@
 			]
 			function search(form) {
 				var results = document.getElementById("results");
-				var query = "SELECT DISTINCT ?work ?label ?comment ?author ?author_label ?location ?notice ?type_label FROM <http://localhost:8890/DAV/fgw> FROM <http://localhost:8890/DAV/fgw/inferr>";
+				var query = "SELECT DISTINCT ?work ?label ?comment ?author ?author_label ?notice ?type_label FROM <http://localhost:8890/DAV/fgw> FROM <http://localhost:8890/DAV/fgw/inferr>";
 				if(form.ambientCG.checked) {
 					query += " FROM " + platforms[0].join(" FROM ");
 				}
@@ -41,7 +41,6 @@
 				if(form.tag.value) {
 					query += "?work fgwcore:tag \"" + form.tag.value + "\"^^<http://www.w3.org/2001/XMLSchema#token>.";
 				}
-				query += "OPTIONAL {?work fgwcore:location ?location.}";
 				query += "OPTIONAL {?work fgwcore:notice ?notice.}";
 				query += "OPTIONAL {?work fgwcore:type ?type. ?type rdfs:label ?type_label.}";
 				if(form.types.value != "all") {
@@ -69,13 +68,7 @@
 				sparqlQuery(query, function(data) {
 					var html = "";
 					for(result in data.results.bindings) {
-						var location;
-						if(data.results.bindings[result].location) {
-							location = data.results.bindings[result].location.value;
-						} else {
-							location = data.results.bindings[result].work.value;
-						}
-						var link = "<a href=\"" + location + "\">" + data.results.bindings[result].label.value + "</a>";
+						var link = "<a href=\"work.html?work=" + encodeURIComponent(data.results.bindings[result].work.value) + "\">" + data.results.bindings[result].label.value + "</a>";
 						html += "<h2>";
 						html += link;
 						if(data.results.bindings[result].author) {
@@ -117,11 +110,11 @@
 		<form onsubmit="return search(this)">
 			<fieldset>
 				<legend>Platforms:</legend>
-				<input type="checkbox" id="ambientCG" name="ambientCG" value="include" />
+				<input type="checkbox" id="ambientCG" name="ambientCG" value="include" checked />
 				<label for="ambientCG">ambientCG</label>
-				<input type="checkbox" id="oga" name="ogs" value="include" />
+				<input type="checkbox" id="oga" name="ogs" value="include" checked />
 				<label for="oga">OpenGameArt.org</label>
-				<input type="checkbox" id="gameIcons" name="gameIcons" value="include" />
+				<input type="checkbox" id="gameIcons" name="gameIcons" value="include" checked />
 				<label for="gameIcons">game-icons.net</label>
 			</fieldset>
 			<label for="tag">Tag:</label>
@@ -141,11 +134,11 @@
 			</select>
 			<fieldset>
 				<legend>License level:</legend>
-				<input type="checkbox" id="permissive" name="permissive" value="fgwcore:permissive" />
+				<input type="checkbox" id="permissive" name="permissive" value="fgwcore:permissive" checked />
 				<label for="permissive">Permissive</label>
-				<input type="checkbox" id="strongCopyleft" name="strongCopyleft" value="include" />
+				<input type="checkbox" id="strongCopyleft" name="strongCopyleft" value="include" checked />
 				<label for="strongCopyleft">Strong copyleft</label>
-				<input type="checkbox" id="weakCopyleft" name="weakCoyleft" value="include" />
+				<input type="checkbox" id="weakCopyleft" name="weakCoyleft" value="include" checked />
 				<label for="weakCopyleft">Weak copyleft</label>
 			</fieldset>
 			<button type="submit">Search</button>
