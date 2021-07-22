@@ -27,3 +27,5 @@ See documentation at: http://150.146.207.114/lode/extract?url=http%3A%2F%2Faspie
 Associated documents (in Italian):
 - https://docs.google.com/document/d/1g-n6LSMm3gEb2Ucv_uic_h-QvA-Iul2LRV0DRY_EPuo/edit#
 - https://docs.google.com/document/d/1yWAbIQGJBIC-bP-5qQUSbEg1GiAEWEObGGIUlXJYMuo/edit#heading=h.c2f5z9mt57v4
+
+The "website" folder contains a website which assumes an instance of Virtuoso with loaded graphs.
