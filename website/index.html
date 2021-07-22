@@ -32,7 +32,7 @@
 				if(form.gameIcons.checked) {
 					query += " FROM " + platforms[2].join(" FROM ");
 				}
-				query += "where {";
+				query += "WHERE {";
 				query += "?work rdf:type fgwcore:Work.";
 				query += "?work rdfs:label ?label.";
 				query += "?work rdfs:comment ?comment.";
