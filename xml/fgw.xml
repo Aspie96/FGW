@@ -17,9 +17,9 @@
      xmlns:fgwcore="http://www.fgw.net/core#"
      xmlns:dcmitype="http://purl.org/dc/dcmitype/">
     <owl:Ontology rdf:about="http://www.fgw.net/">
-        <owl:imports rdf:resource="http://aspie96.github.io/FGW/fgwcore.owl"/>
-        <owl:imports rdf:resource="http://aspie96.github.io/FGW/fgwf.owl"/>
-        <owl:imports rdf:resource="http://aspie96.github.io/FGW/fgwl.owl"/>
+        <owl:imports rdf:resource="http://aspie96.github.io/FGW/xml/fgwcore.xml"/>
+        <owl:imports rdf:resource="http://aspie96.github.io/FGW/xml/fgwf.xml"/>
+        <owl:imports rdf:resource="http://aspie96.github.io/FGW/xml/fgwl.xml"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Valentino Giudice</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2021-07-14T00:00:00-00:00</dc:date>
         <dc:description xml:lang="en">Free Game Works ontology.
